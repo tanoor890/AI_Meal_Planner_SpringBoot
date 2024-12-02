@@ -1,1 +1,795 @@
 
+{
+  "meals": [
+    {
+      "name": "Bengali Fish Curry",
+      "ingredients": ["Rohu fish", "Potato", "Tomato", "Onion", "Mustard oil", "Spices"],
+      "recipe": "Fry onions and tomatoes with spices in mustard oil. Add fish and potatoes, cook until done. Serve with steamed rice."
+    },
+    {
+      "name": "Summer Mango Salad",
+      "ingredients": ["Mango", "Cucumber", "Red onion", "Lime", "Cilantro", "Chili flakes"],
+      "recipe": "Slice mango and cucumber. Mix with thinly sliced red onion, lime juice, cilantro, and chili flakes. Chill before serving."
+    },
+    {
+      "name": "Egg Bhurji",
+      "ingredients": ["Eggs", "Onion", "Tomato", "Green chili", "Cilantro", "Spices"],
+      "recipe": "Sauté onions, tomatoes, and green chilies with spices. Add beaten eggs and cook until scrambled. Garnish with cilantro."
+    },
+    {
+      "name": "Lentil Dal",
+      "ingredients": ["Red lentils", "Onion", "Tomato", "Garlic", "Ginger", "Spices"],
+      "recipe": "Cook lentils with water until soft. Sauté onions, tomatoes, garlic, ginger, and spices, then mix into the cooked lentils. Serve with rice."
+    },
+    {
+      "name": "Chicken Biryani",
+      "ingredients": ["Chicken", "Basmati rice", "Yogurt", "Onion", "Tomato", "Spices", "Herbs"],
+      "recipe": "Marinate chicken with yogurt and spices. Layer with partially cooked rice and herbs. Cook on low heat until done. Serve with raita."
+    },
+    {
+      "name": "Vegetable Pulao",
+      "ingredients": ["Basmati rice", "Mixed vegetables", "Onion", "Garlic", "Spices", "Ghee"],
+      "recipe": "Sauté onions and garlic in ghee with spices. Add mixed vegetables and rice, cook with water until done."
+    },
+    {
+      "name": "Grilled Paneer Skewers",
+      "ingredients": ["Paneer", "Bell peppers", "Onion", "Yogurt", "Spices", "Lemon"],
+      "recipe": "Marinate paneer and vegetables in yogurt and spices. Thread onto skewers and grill until golden. Serve with lemon wedges."
+    },
+    {
+      "name": "Winter Pumpkin Soup",
+      "ingredients": ["Pumpkin", "Onion", "Garlic", "Vegetable broth", "Cream", "Spices"],
+      "recipe": "Cook pumpkin with onions and garlic in vegetable broth until soft. Blend until smooth, add cream and spices, and heat through."
+    },
+    {
+      "name": "Spinach and Chickpea Curry",
+      "ingredients": ["Spinach", "Chickpeas", "Onion", "Tomato", "Garlic", "Spices"],
+      "recipe": "Sauté onions and garlic with spices. Add tomatoes, chickpeas, and spinach. Cook until spinach is wilted and flavors meld. Serve with rice or bread."
+    },
+    {
+      "name": "Fruit Chaat",
+      "ingredients": ["Apple", "Banana", "Pomegranate", "Chaat masala", "Lemon juice", "Mint"],
+      "recipe": "Chop all fruits and mix with chaat masala, lemon juice, and chopped mint. Serve chilled."
+    },
+    {
+      "name": "Masoor Dal Soup",
+      "ingredients": ["Red lentils", "Carrot", "Celery", "Onion", "Garlic", "Spices"],
+      "recipe": "Cook lentils with carrots, celery, onion, and garlic until soft. Blend partially for a chunky texture. Season with spices and serve warm."
+    },
+    {
+      "name": "Stuffed Paratha",
+      "ingredients": ["Whole wheat flour", "Potato", "Cauliflower", "Spices", "Oil"],
+      "recipe": "Prepare dough with whole wheat flour. Make stuffing with boiled potatoes or cauliflower mixed with spices. Stuff the dough and roll out. Cook on a tava with oil until golden."
+    },
+    {
+      "name": "Refreshing Lemonade",
+      "ingredients": ["Lemon", "Sugar", "Water", "Mint", "Ice"],
+      "recipe": "Juice the lemons and mix with sugar and water. Add chopped mint and ice. Stir well before serving."
+    },
+    {
+      "name": "Beef Nihari",
+      "ingredients": ["Beef shank", "Onion", "Ginger", "Garlic", "Nihari spices", "Ghee"],
+      "recipe": "Cook beef with onions, ginger, garlic, and nihari spices in ghee until tender. Serve hot with naan or paratha."
+    },
+    {
+      "name": "Mixed Vegetable Stir Fry",
+      "ingredients": ["Broccoli", "Carrot", "Bell pepper", "Snow peas", "Soy sauce", "Garlic"],
+      "recipe": "Stir fry vegetables with garlic and soy sauce until tender-crisp. Serve as a side or with rice."
+    },
+    {
+      "name": "Tandoori Chicken",
+      "ingredients": ["Chicken", "Yogurt", "Tandoori masala", "Lemon juice", "Garlic", "Ginger"],
+      "recipe": "Marinate chicken in yogurt, tandoori masala, lemon juice, garlic, and ginger. Grill or bake until cooked through. Serve with salad."
+    },
+    {
+      "name": "Banana Smoothie",
+      "ingredients": ["Banana", "Milk", "Honey", "Ice", "Cinnamon"],
+      "recipe": "Blend banana, milk, honey, ice, and a dash of cinnamon until smooth. Serve chilled."
+    },
+    {
+      "name": "Paneer Bhurji",
+      "ingredients": ["Paneer", "Onion", "Tomato", "Green chili", "Spices", "Cilantro"],
+      "recipe": "Sauté onions, tomatoes, and green chilies with spices. Add crumbled paneer and cook until heated through. Garnish with cilantro. Serve with bread or paratha."
+    },
+    {
+      "name": "Tomato Omelette",
+      "ingredients": ["Eggs", "Tomato", "Onion", "Green chili", "Cilantro", "Spices"],
+      "recipe": "Beat eggs with chopped tomatoes, onions, green chili, cilantro, and spices. Cook on a skillet until set. Serve hot."
+    },
+    {
+      "name": "Coconut Rice",
+      "ingredients": ["Basmati rice", "Coconut milk", "Mustard seeds", "Green chili", "Cashews", "Cilantro"],
+      "recipe": "Cook rice with coconut milk. In a separate pan, temper mustard seeds, green chili, and cashews. Mix into the cooked rice and garnish with cilantro."
+    },
+    {
+      "name": "Aloo Gobi",
+      "ingredients": ["Potato", "Cauliflower", "Tomato", "Onion", "Spices", "Ginger", "Garlic"],
+      "recipe": "Sauté onions, ginger, and garlic with spices. Add potatoes and cauliflower, cook with tomatoes until vegetables are tender."
+    },
+    {
+      "name": "Shrimp Biryani",
+      "ingredients": ["Shrimp", "Basmati rice", "Yogurt", "Onion", "Tomato", "Spices", "Herbs"],
+      "recipe": "Marinate shrimp with yogurt and spices. Layer with partially cooked rice and herbs. Cook on low heat until done. Serve with raita."
+    },
+    {
+      "name": "Cucumber Raita",
+      "ingredients": ["Yogurt", "Cucumber", "Cilantro", "Cumin", "Salt"],
+      "recipe": "Grate cucumber and mix with yogurt. Add chopped cilantro, cumin powder, and salt. Chill before serving."
+    },
+    {
+      "name": "Sweet Mango Lassi",
+      "ingredients": ["Mango", "Yogurt", "Sugar", "Cardamom", "Ice"],
+      "recipe": "Blend mango with yogurt, sugar, cardamom, and ice until smooth. Serve chilled."
+    },
+    {
+      "name": "Mixed Fruit Parfait",
+      "ingredients": ["Yogurt", "Granola", "Mixed fruits", "Honey"],
+      "recipe": "Layer yogurt, granola, and mixed fruits in a glass. Drizzle with honey and serve immediately."
+    },
+    {
+      "name": "Vegetable Samosa",
+      "ingredients": ["Whole wheat flour", "Potato", "Peas", "Carrot", "Spices", "Oil"],
+      "recipe": "Prepare dough with whole wheat flour. Make stuffing with boiled potatoes, peas, carrots, and spices. Fill dough and shape into triangles. Deep fry until golden."
+    },
+    {
+      "name": "Berry Chia Pudding",
+      "ingredients": ["Chia seeds", "Milk", "Honey", "Mixed berries"],
+      "recipe": "Mix chia seeds with milk and honey. Refrigerate overnight. Top with mixed berries before serving."
+    },
+    {
+      "name": "Roasted Chickpeas",
+      "ingredients": ["Chickpeas", "Olive oil", "Spices", "Salt"],
+      "recipe": "Toss chickpeas with olive oil, spices, and salt. Roast in the oven until crispy. Serve as a snack."
+    }
+    {
+      "name": "Bhuna Khichuri",
+      "ingredients": ["Rice", "Split lentils", "Beef", "Potato", "Carrot", "Onion", "Garlic", "Ginger", "Spices"],
+      "recipe": "Sauté onions, garlic, and ginger with spices. Add beef, potatoes, and carrots, cook until browned. Add rice and lentils with water, simmer until cooked. Serve hot."
+    },
+    {
+      "name": "Summer Ilish Bhapa",
+      "ingredients": ["Hilsa fish", "Mustard paste", "Green chili", "Turmeric", "Salt", "Banana leaves"],
+      "recipe": "Marinate hilsa fish with mustard paste, green chili, turmeric, and salt. Wrap in banana leaves and steam until cooked. Serve with steamed rice."
+    },
+    {
+      "name": "Winter Begun Bhorta",
+      "ingredients": ["Eggplant", "Mustard oil", "Green chili", "Onion", "Salt"],
+      "recipe": "Roast eggplants until soft. Mash and mix with mustard oil, finely chopped green chili, onion, and salt. Serve as a side dish."
+    },
+    {
+      "name": "Chicken Shorba",
+      "ingredients": ["Chicken", "Onion", "Garlic", "Ginger", "Tomato", "Spices", "Cilantro"],
+      "recipe": "Boil chicken with onions, garlic, ginger, tomatoes, and spices until tender. Garnish with chopped cilantro and serve warm."
+    },
+    {
+      "name": "Aam Pora",
+      "ingredients": ["Raw mango", "Sugar", "Salt", "Red chili powder"],
+      "recipe": "Roast raw mango until soft. Peel and mash with sugar, salt, and red chili powder to taste. Serve as a tangy side dish."
+    },
+    {
+      "name": "Palak Paneer",
+      "ingredients": ["Spinach", "Paneer", "Onion", "Garlic", "Ginger", "Tomato", "Spices"],
+      "recipe": "Blanch and puree spinach. Sauté onions, garlic, ginger, and spices. Add tomato and cook until soft. Mix in spinach puree and paneer cubes, simmer for a few minutes. Serve with naan or rice."
+    },
+    {
+      "name": "Seasonal Fruit Salad",
+      "ingredients": ["Mango", "Pineapple", "Papaya", "Banana", "Honey", "Lime juice"],
+      "recipe": "Chop all seasonal fruits and mix in a bowl. Drizzle with honey and lime juice. Toss gently and serve chilled."
+    },
+    {
+      "name": "Masala Chingri",
+      "ingredients": ["Prawns", "Onion", "Tomato", "Garlic", "Ginger", "Spices", "Coriander"],
+      "recipe": "Sauté onions, garlic, and ginger with spices. Add tomatoes and cook until soft. Add prawns and cook until done. Garnish with coriander and serve with rice."
+    },
+    {
+      "name": "Daal Chilla",
+      "ingredients": ["Split lentils", "Onion", "Green chili", "Coriander", "Spices", "Oil"],
+      "recipe": "Soak and grind lentils into a batter. Mix in finely chopped onions, green chili, coriander, and spices. Pour batter onto a hot skillet, drizzle with oil, and cook until crispy on both sides. Serve with chutney."
+    },
+    {
+      "name": "Kacha Aam Chutney",
+      "ingredients": ["Raw mango", "Sugar", "Salt", "Red chili powder", "Tamarind"],
+      "recipe": "Boil raw mango with tamarind until soft. Mash and mix with sugar, salt, and red chili powder. Cook until thickened and serve as a tangy condiment."
+    },
+    {
+      "name": "Mixed Vegetable Curry",
+      "ingredients": ["Potato", "Cauliflower", "Carrot", "Green peas", "Tomato", "Onion", "Spices"],
+      "recipe": "Sauté onions with spices until golden. Add tomatoes and cook until soft. Add mixed vegetables and cook with water until tender. Serve with rice or roti."
+    },
+    {
+      "name": "Beef Bhuna",
+      "ingredients": ["Beef", "Onion", "Garlic", "Ginger", "Tomato", "Spices", "Cilantro"],
+      "recipe": "Cook beef with onions, garlic, ginger, and spices until browned. Add tomatoes and simmer until the beef is tender and the sauce is thick. Garnish with cilantro and serve with rice."
+    },
+    {
+      "name": "Summer Lassi",
+      "ingredients": ["Yogurt", "Sugar", "Cardamom", "Ice"],
+      "recipe": "Blend yogurt with sugar, cardamom, and ice until smooth. Serve chilled as a refreshing summer drink."
+    },
+    {
+      "name": "Vegetable Biryani",
+      "ingredients": ["Basmati rice", "Mixed vegetables", "Onion", "Tomato", "Yogurt", "Spices", "Herbs"],
+      "recipe": "Sauté onions with spices and herbs. Add mixed vegetables and cook until tender. Mix in yogurt and layer with partially cooked rice. Cook on low heat until done. Serve with raita."
+    },
+    {
+      "name": "Banana Bhaji",
+      "ingredients": ["Banana", "Chickpea flour", "Turmeric", "Red chili powder", "Salt", "Oil"],
+      "recipe": "Slice bananas and coat them with a batter made of chickpea flour, turmeric, red chili powder, and salt. Deep fry until golden and crispy. Serve hot as a snack."
+    },
+    {
+      "name": "Stuffed Bell Peppers",
+      "ingredients": ["Bell peppers", "Rice", "Ground beef", "Onion", "Tomato", "Spices", "Cheese"],
+      "recipe": "Prepare a filling with cooked rice, ground beef, sautéed onions, tomatoes, and spices. Stuff the mixture into bell peppers, top with cheese, and bake until peppers are tender."
+    },
+    {
+      "name": "Matar Paneer",
+      "ingredients": ["Paneer", "Green peas", "Onion", "Tomato", "Garlic", "Ginger", "Spices"],
+      "recipe": "Sauté onions, garlic, and ginger with spices. Add tomatoes and cook until soft. Add green peas and paneer cubes, simmer until heated through. Serve with naan or rice."
+    },
+    {
+      "name": "Tomato Pulao",
+      "ingredients": ["Basmati rice", "Tomato", "Onion", "Garlic", "Spices", "Ghee"],
+      "recipe": "Sauté onions and garlic in ghee with spices. Add chopped tomatoes and cook until soft. Add rice and water, cook until done. Fluff with a fork and serve."
+    },
+    {
+      "name": "Shrimp Malai Curry",
+      "ingredients": ["Shrimp", "Coconut milk", "Onion", "Garlic", "Ginger", "Spices", "Coriander"],
+      "recipe": "Sauté onions, garlic, and ginger with spices until fragrant. Add shrimp and cook until they turn pink. Pour in coconut milk and simmer until the curry thickens. Garnish with coriander and serve with rice."
+    },
+    {
+      "name": "Spinach and Potato Bhaji",
+      "ingredients": ["Spinach", "Potato", "Onion", "Green chili", "Spices", "Oil"],
+      "recipe": "Sauté onions and green chilies with spices. Add diced potatoes and cook until tender. Add spinach and cook until wilted. Serve with roti or paratha."
+    },
+    {
+      "name": "Lemon Coriander Soup",
+      "ingredients": ["Vegetable broth", "Lemon juice", "Coriander", "Garlic", "Ginger", "Spices"],
+      "recipe": "Boil vegetable broth with garlic, ginger, and spices. Add lemon juice and chopped coriander. Simmer for a few minutes and serve hot."
+    },
+    {
+      "name": "Paneer Tikka",
+      "ingredients": ["Paneer", "Yogurt", "Spices", "Bell peppers", "Onion", "Lemon juice"],
+      "recipe": "Marinate paneer cubes with yogurt and spices. Thread onto skewers with bell peppers and onions. Grill or bake until golden. Serve with chutney."
+    },
+    {
+      "name": "Beetroot Porota",
+      "ingredients": ["Whole wheat flour", "Beetroot", "Onion", "Spices", "Oil"],
+      "recipe": "Grate beetroot and mix with whole wheat flour, finely chopped onions, spices, and oil. Knead into dough, roll out into parotas, and cook on a tava with oil until golden."
+    },
+    {
+      "name": "Mung Bean Sprout Salad",
+      "ingredients": ["Mung bean sprouts", "Cucumber", "Tomato", "Onion", "Lime juice", "Salt", "Pepper"],
+      "recipe": "Mix mung bean sprouts with chopped cucumber, tomato, and onion. Dress with lime juice, salt, and pepper. Serve fresh as a healthy salad."
+    },
+    {
+      "name": "Kadhi Chawal",
+      "ingredients": ["Yogurt", "Besan (chickpea flour)", "Onion", "Green chili", "Spices", "Rice"],
+      "recipe": "Prepare kadhi by mixing yogurt and besan with water, then cooking with onions, green chilies, and spices. Serve hot over steamed rice."
+    },
+    {
+      "name": "Pumpkin Bhaji",
+      "ingredients": ["Pumpkin", "Onion", "Green chili", "Spices", "Oil"],
+      "recipe": "Sauté onions and green chilies with spices. Add diced pumpkin and cook until tender. Serve as a side dish with rice or roti."
+    },
+    {
+      "name": "Coconut Chutney",
+      "ingredients": ["Grated coconut", "Green chili", "Ginger", "Roasted chana dal", "Salt", "Mustard seeds", "Curry leaves"],
+      "recipe": "Blend grated coconut with green chili, ginger, roasted chana dal, and salt. Temper with mustard seeds and curry leaves in oil, pour over chutney. Serve with dosa or idli."
+    },
+    {
+      "name": "Baked Sweet Potatoes",
+      "ingredients": ["Sweet potatoes", "Olive oil", "Salt", "Pepper", "Rosemary"],
+      "recipe": "Slice sweet potatoes, toss with olive oil, salt, pepper, and rosemary. Bake at 200°C until crispy on the outside and tender inside. Serve as a healthy side or snack."
+    },
+    {
+      "name": "Chicken Kebabs",
+      "ingredients": ["Chicken breast", "Yogurt", "Garlic", "Ginger", "Spices", "Lemon juice"],
+      "recipe": "Marinate chicken pieces with yogurt, garlic, ginger, spices, and lemon juice. Skewer and grill or bake until cooked through. Serve with salad or chutney."
+    },
+    {
+      "name": "Baingan Bharta",
+      "ingredients": ["Eggplant", "Onion", "Tomato", "Garlic", "Ginger", "Spices"],
+      "recipe": "Roast eggplant until soft. Mash and sauté with onions, garlic, ginger, tomatoes, and spices. Cook until well combined and serve with roti or rice."
+    },
+    {
+      "name": "Papaya Smoothie",
+      "ingredients": ["Papaya", "Milk", "Honey", "Ice", "Cardamom"],
+      "recipe": "Blend papaya with milk, honey, ice, and a dash of cardamom until smooth. Serve chilled."
+    },
+    {
+      "name": "Stuffed Tomatoes",
+      "ingredients": ["Tomatoes", "Rice", "Onion", "Garlic", "Spices", "Cilantro"],
+      "recipe": "Hollow out tomatoes and stuff with a mixture of cooked rice, sautéed onions, garlic, and spices. Bake until tomatoes are tender. Garnish with chopped cilantro and serve."
+    },
+    {
+      "name": "Mixed Vegetable Frittata",
+      "ingredients": ["Eggs", "Mixed vegetables", "Onion", "Cheese", "Spices", "Oil"],
+      "recipe": "Sauté mixed vegetables and onions with spices. Pour beaten eggs over the vegetables, sprinkle with cheese, and cook until set. Finish under the broiler if needed. Serve hot or cold."
+    },
+    {
+      "name": "Ginger Tea",
+      "ingredients": ["Fresh ginger", "Water", "Honey", "Lemon"],
+      "recipe": "Boil water with freshly sliced ginger. Simmer for 10 minutes, strain, and sweeten with honey. Add a splash of lemon juice and serve hot."
+    },
+    {
+      "name": "Vegetable Upma",
+      "ingredients": ["Semolina", "Mixed vegetables", "Onion", "Green chili", "Mustard seeds", "Curry leaves", "Oil"],
+      "recipe": "Sauté mustard seeds and curry leaves in oil. Add onions and green chilies, cook until soft. Add mixed vegetables and cook until tender. Stir in semolina, roast until golden, and add water. Cook until semolina absorbs the water. Serve hot."
+    },
+    {
+      "name": "Beef Tehari",
+      "ingredients": ["Beef", "Basmati rice", "Onion", "Tomato", "Yogurt", "Spices", "Herbs"],
+      "recipe": "Cook beef with onions, tomatoes, yogurt, and spices until tender. Layer with partially cooked rice and herbs. Cook on low heat until done. Serve with raita."
+    },
+    {
+      "name": "Cucumber Mint Raita",
+      "ingredients": ["Yogurt", "Cucumber", "Mint leaves", "Cumin powder", "Salt"],
+      "recipe": "Grate cucumber and mix with yogurt. Add chopped mint leaves, cumin powder, and salt. Chill before serving."
+    },
+    {
+      "name": "Mushroom Curry",
+      "ingredients": ["Mushrooms", "Onion", "Tomato", "Garlic", "Ginger", "Spices", "Cilantro"],
+      "recipe": "Sauté onions, garlic, and ginger with spices until fragrant. Add tomatoes and cook until soft. Add mushrooms and cook until tender. Garnish with cilantro and serve with rice or roti."
+    },
+    {
+      "name": "Taro Root Bhaji",
+      "ingredients": ["Taro root", "Onion", "Green chili", "Spices", "Oil"],
+      "recipe": "Boil and dice taro root. Sauté onions and green chilies with spices. Add taro root and cook until crispy and golden. Serve as a side dish."
+    },
+    {
+      "name": "Fruit Smoothie Bowl",
+      "ingredients": ["Mixed fruits", "Yogurt", "Honey", "Granola", "Chia seeds"],
+      "recipe": "Blend mixed fruits with yogurt and honey until smooth. Pour into a bowl and top with granola and chia seeds. Serve immediately."
+    },
+    {
+      "name": "Kacchi Biryani",
+      "ingredients": ["Basmati rice", "Beef or mutton", "Yogurt", "Onion", "Spices", "Herbs", "Ghee"],
+      "recipe": "Marinate meat with yogurt and spices. Layer with partially cooked rice and herbs. Drizzle with ghee and cook on low heat until done. Serve with salad and raita."
+    },
+    {
+      "name": "Banana Chips",
+      "ingredients": ["Banana", "Oil", "Salt"],
+      "recipe": "Slice bananas thinly. Deep fry in hot oil until crispy. Drain excess oil and sprinkle with salt. Serve as a crunchy snack."
+    }
+    {
+      "name": "Summer Grilled Prawns",
+      "ingredients": ["Prawns", "Lemon", "Garlic", "Olive oil", "Parsley", "Salt", "Pepper"],
+      "recipe": "Marinate prawns with lemon juice, minced garlic, olive oil, chopped parsley, salt, and pepper. Grill until cooked through. Serve chilled or warm."
+    },
+    {
+      "name": "Winter Chicken Stew",
+      "ingredients": ["Chicken thighs", "Potatoes", "Carrots", "Onions", "Celery", "Chicken broth", "Herbs"],
+      "recipe": "Sauté onions and celery until soft. Add chicken thighs and brown slightly. Add potatoes, carrots, chicken broth, and herbs. Simmer until chicken and vegetables are tender. Serve hot."
+    },
+    {
+      "name": "Spring Vegetable Sandwich",
+      "ingredients": ["Whole grain bread", "Cucumber", "Lettuce", "Tomato", "Avocado", "Hummus"],
+      "recipe": "Spread hummus on bread slices. Layer with sliced cucumber, lettuce, tomato, and avocado. Assemble and serve fresh."
+    },
+    {
+      "name": "Autumn Pumpkin Salad",
+      "ingredients": ["Pumpkin", "Spinach", "Feta cheese", "Walnuts", "Olive oil", "Balsamic vinegar", "Salt", "Pepper"],
+      "recipe": "Roast pumpkin cubes with olive oil, salt, and pepper until tender. In a bowl, combine spinach, roasted pumpkin, feta cheese, and walnuts. Drizzle with balsamic vinegar and olive oil. Toss and serve."
+    },
+    {
+      "name": "Kid-Friendly Banana Pancakes",
+      "ingredients": ["Bananas", "Eggs", "Whole wheat flour", "Milk", "Baking powder", "Honey"],
+      "recipe": "Mash bananas and mix with eggs, milk, and honey. Add whole wheat flour and baking powder. Cook pancakes on a skillet until golden brown on both sides. Serve with fresh fruit."
+    },
+    {
+      "name": "High-Protein Tofu Stir Fry",
+      "ingredients": ["Tofu", "Broccoli", "Bell peppers", "Soy sauce", "Garlic", "Ginger", "Olive oil"],
+      "recipe": "Press and cube tofu. Sauté garlic and ginger in olive oil, add tofu and cook until golden. Add broccoli and bell peppers, stir fry with soy sauce until vegetables are tender. Serve with brown rice."
+    },
+    {
+      "name": "Elderly-Friendly Soft Lentil Soup",
+      "ingredients": ["Red lentils", "Carrots", "Onions", "Garlic", "Vegetable broth", "Turmeric", "Salt"],
+      "recipe": "Sauté onions and garlic until translucent. Add carrots, lentils, turmeric, and vegetable broth. Cook until lentils and carrots are soft. Blend until smooth. Season with salt and serve warm."
+    },
+    {
+      "name": "Weight Gain Smoothie",
+      "ingredients": ["Banana", "Peanut butter", "Whole milk", "Oats", "Honey"],
+      "recipe": "Blend banana, peanut butter, whole milk, oats, and honey until smooth. Serve chilled."
+    },
+    {
+      "name": "Weight Loss Salad",
+      "ingredients": ["Mixed greens", "Grilled chicken breast", "Cherry tomatoes", "Cucumber", "Avocado", "Lemon vinaigrette"],
+      "recipe": "Combine mixed greens, sliced grilled chicken, cherry tomatoes, cucumber, and avocado. Drizzle with lemon vinaigrette and toss gently. Serve fresh."
+    },
+    {
+      "name": "Child-Friendly Macaroni and Cheese",
+      "ingredients": ["Macaroni", "Cheddar cheese", "Milk", "Butter", "Flour", "Salt", "Pepper"],
+      "recipe": "Cook macaroni according to package instructions. In a saucepan, melt butter, add flour to make a roux. Gradually add milk, stirring until thickened. Add shredded cheddar cheese, salt, and pepper. Mix with cooked macaroni and serve."
+    },
+    {
+      "name": "Energizing Quinoa Breakfast Bowl",
+      "ingredients": ["Quinoa", "Almond milk", "Honey", "Mixed berries", "Almonds"],
+      "recipe": "Cook quinoa in almond milk until creamy. Sweeten with honey. Top with mixed berries and sliced almonds. Serve warm."
+    },
+    {
+      "name": "Heart-Healthy Oatmeal",
+      "ingredients": ["Rolled oats", "Banana", "Blueberries", "Chia seeds", "Honey", "Almond milk"],
+      "recipe": "Cook rolled oats with almond milk. Stir in mashed banana and honey. Top with blueberries and chia seeds. Serve hot."
+    },
+    {
+      "name": "Vitamin-Rich Spinach Smoothie",
+      "ingredients": ["Spinach", "Apple", "Banana", "Orange juice", "Yogurt"],
+      "recipe": "Blend spinach, chopped apple, banana, orange juice, and yogurt until smooth. Serve chilled."
+    },
+    {
+      "name": "Protein-Packed Chickpea Salad",
+      "ingredients": ["Chickpeas", "Cucumber", "Tomato", "Red onion", "Feta cheese", "Olive oil", "Lemon juice"],
+      "recipe": "Combine chickpeas, diced cucumber, tomato, and red onion in a bowl. Add crumbled feta cheese. Drizzle with olive oil and lemon juice. Toss and serve."
+    },
+    {
+      "name": "Low-Carb Zucchini Noodles",
+      "ingredients": ["Zucchini", "Cherry tomatoes", "Parmesan cheese", "Garlic", "Olive oil", "Basil"],
+      "recipe": "Spiralize zucchini into noodles. Sauté garlic in olive oil, add cherry tomatoes and cook until soft. Toss zucchini noodles with tomato mixture, sprinkle with Parmesan and basil. Serve warm."
+    },
+    {
+      "name": "Detox Green Juice",
+      "ingredients": ["Kale", "Spinach", "Cucumber", "Green apple", "Lemon", "Ginger"],
+      "recipe": "Juice kale, spinach, cucumber, green apple, lemon, and ginger together. Serve fresh."
+    },
+    {
+      "name": "Age-Friendly Soft Vegetable Mash",
+      "ingredients": ["Potatoes", "Carrots", "Peas", "Butter", "Milk", "Salt"],
+      "recipe": "Boil potatoes and carrots until soft. Mash with butter and milk until smooth. Stir in peas and season with salt. Serve warm."
+    },
+    {
+      "name": "Balanced Tuna Sandwich",
+      "ingredients": ["Whole grain bread", "Canned tuna", "Mayonnaise", "Lettuce", "Tomato", "Salt", "Pepper"],
+      "recipe": "Mix canned tuna with mayonnaise, salt, and pepper. Spread on whole grain bread. Add lettuce and tomato slices. Assemble and serve."
+    },
+    {
+      "name": "Fiber-Rich Black Bean Soup",
+      "ingredients": ["Black beans", "Onions", "Garlic", "Tomatoes", "Vegetable broth", "Cumin", "Coriander"],
+      "recipe": "Sauté onions and garlic until translucent. Add tomatoes, black beans, vegetable broth, cumin, and coriander. Simmer until flavors meld. Blend partially for a chunky texture. Serve hot."
+    },
+    {
+      "name": "Refreshing Cucumber Mint Cooler",
+      "ingredients": ["Cucumber", "Mint leaves", "Lemon juice", "Honey", "Water", "Ice"],
+      "recipe": "Blend cucumber with mint leaves and lemon juice. Strain and mix with honey and water. Serve over ice."
+    },
+    {
+      "name": "Nutrient-Dense Beetroot Salad",
+      "ingredients": ["Beetroot", "Arugula", "Goat cheese", "Walnuts", "Olive oil", "Balsamic vinegar", "Salt", "Pepper"],
+      "recipe": "Roast or boil beetroot until tender. Slice and combine with arugula, crumbled goat cheese, and walnuts. Drizzle with olive oil and balsamic vinegar. Season with salt and pepper. Toss gently and serve."
+    },
+    {
+      "name": "Balanced Grilled Vegetable Plate",
+      "ingredients": ["Bell peppers", "Zucchini", "Eggplant", "Mushrooms", "Olive oil", "Herbs", "Salt", "Pepper"],
+      "recipe": "Slice bell peppers, zucchini, eggplant, and mushrooms. Toss with olive oil, herbs, salt, and pepper. Grill until vegetables are tender and slightly charred. Serve as a side or main dish."
+    },
+    {
+      "name": "Kid-Friendly Chicken Nuggets",
+      "ingredients": ["Chicken breast", "Breadcrumbs", "Eggs", "Parmesan cheese", "Salt", "Pepper", "Oil"],
+      "recipe": "Cut chicken breast into nugget-sized pieces. Dip in beaten eggs, then coat with a mixture of breadcrumbs and Parmesan cheese. Fry in oil until golden and cooked through. Serve with ketchup or favorite dipping sauce."
+    },
+    {
+      "name": "Weight Maintenance Buddha Bowl",
+      "ingredients": ["Quinoa", "Chickpeas", "Avocado", "Sweet potato", "Spinach", "Tahini dressing"],
+      "recipe": "Cook quinoa and roast sweet potato cubes. Assemble bowl with quinoa, chickpeas, sliced avocado, roasted sweet potatoes, and fresh spinach. Drizzle with tahini dressing and serve."
+    },
+    {
+      "name": "Age-Appropriate Soft Fruit Puree",
+      "ingredients": ["Apples", "Pears", "Bananas", "Water"],
+      "recipe": "Peel and chop apples, pears, and bananas. Cook with water until soft. Blend until smooth. Serve warm or chilled."
+    },
+    {
+      "name": "Seasonal Fruit Tart",
+      "ingredients": ["Whole wheat crust", "Mixed seasonal fruits", "Custard", "Honey"],
+      "recipe": "Prepare whole wheat crust and bake until golden. Fill with custard and arrange mixed seasonal fruits on top. Drizzle with honey and serve."
+    },
+    {
+      "name": "Energy-Boosting Trail Mix",
+      "ingredients": ["Almonds", "Cashews", "Dried cranberries", "Pumpkin seeds", "Dark chocolate chips"],
+      "recipe": "Mix almonds, cashews, dried cranberries, pumpkin seeds, and dark chocolate chips in a bowl. Store in an airtight container. Serve as a healthy snack."
+    },
+    {
+      "name": "Low-Fat Yogurt Parfait",
+      "ingredients": ["Low-fat yogurt", "Granola", "Mixed berries", "Honey"],
+      "recipe": "Layer low-fat yogurt with granola and mixed berries in a glass. Drizzle with honey and serve immediately."
+    },
+    {
+      "name": "Protein-Rich Lentil Salad",
+      "ingredients": ["Lentils", "Cherry tomatoes", "Cucumber", "Red onion", "Feta cheese", "Olive oil", "Lemon juice"],
+      "recipe": "Cook lentils until tender. Mix with halved cherry tomatoes, diced cucumber, finely chopped red onion, and crumbled feta cheese. Drizzle with olive oil and lemon juice. Toss and serve."
+    },
+    {
+      "name": "Gluten-Free Banana Bread",
+      "ingredients": ["Bananas", "Gluten-free flour", "Eggs", "Honey", "Baking soda", "Vanilla extract", "Salt"],
+      "recipe": "Mash bananas and mix with eggs, honey, and vanilla extract. Combine with gluten-free flour, baking soda, and salt. Pour into a loaf pan and bake until a toothpick comes out clean. Let cool before slicing."
+    },
+    {
+      "name": "Homemade Granola Bars",
+      "ingredients": ["Oats", "Honey", "Peanut butter", "Dried fruits", "Nuts", "Chia seeds"],
+      "recipe": "Mix oats, dried fruits, nuts, and chia seeds in a bowl. In a saucepan, heat honey and peanut butter until smooth. Combine with dry ingredients and press into a baking dish. Refrigerate until firm, then cut into bars."
+    },
+    {
+      "name": "Avocado and Tomato Toast",
+      "ingredients": ["Whole grain bread", "Avocado", "Tomato", "Lemon juice", "Salt", "Pepper", "Chili flakes"],
+      "recipe": "Toast whole grain bread. Mash avocado with lemon juice, salt, and pepper. Spread on toast and top with sliced tomato and a sprinkle of chili flakes. Serve immediately."
+    },
+    {
+      "name": "Stuffed Spinach Paratha",
+      "ingredients": ["Whole wheat flour", "Spinach", "Onion", "Green chili", "Garam masala", "Salt", "Oil"],
+      "recipe": "Prepare dough with whole wheat flour. Sauté spinach with chopped onions, green chili, garam masala, and salt. Let it cool and use as stuffing for parathas. Roll out and cook on a tava with oil until golden brown."
+    },
+    {
+      "name": "Coconut Chia Pudding",
+      "ingredients": ["Chia seeds", "Coconut milk", "Honey", "Vanilla extract", "Mango"],
+      "recipe": "Mix chia seeds with coconut milk, honey, and vanilla extract. Refrigerate overnight. Top with fresh mango slices before serving."
+    },
+    {
+      "name": "Beef and Vegetable Kebabs",
+      "ingredients": ["Beef chunks", "Bell peppers", "Onions", "Cherry tomatoes", "Olive oil", "Spices", "Lemon juice"],
+      "recipe": "Marinate beef chunks with olive oil, spices, and lemon juice. Thread onto skewers alternating with bell peppers, onions, and cherry tomatoes. Grill until beef is cooked to desired doneness. Serve with a side salad."
+    },
+    {
+      "name": "Healthy Veggie Pizza",
+      "ingredients": ["Whole wheat pizza dough", "Tomato sauce", "Mozzarella cheese", "Bell peppers", "Mushrooms", "Olives", "Spinach"],
+      "recipe": "Spread tomato sauce on whole wheat pizza dough. Top with mozzarella cheese and assorted vegetables. Bake until crust is crispy and cheese is melted. Slice and serve."
+    },
+    {
+      "name": "Berry and Spinach Smoothie",
+      "ingredients": ["Spinach", "Mixed berries", "Banana", "Almond milk", "Honey"],
+      "recipe": "Blend spinach, mixed berries, banana, almond milk, and honey until smooth. Serve chilled."
+    },
+    {
+      "name": "Low-Sugar Apple Crisp",
+      "ingredients": ["Apples", "Oats", "Almond flour", "Cinnamon", "Honey", "Butter"],
+      "recipe": "Slice apples and place in a baking dish. Mix oats, almond flour, cinnamon, honey, and melted butter. Sprinkle over apples. Bake until topping is golden and apples are tender. Serve warm."
+    },
+    {
+      "name": "Hearty Beef and Barley Soup",
+      "ingredients": ["Beef chunks", "Barley", "Carrots", "Celery", "Onions", "Beef broth", "Herbs"],
+      "recipe": "Sauté onions, carrots, and celery until soft. Add beef chunks and brown slightly. Add barley, beef broth, and herbs. Simmer until beef and barley are tender. Serve hot."
+    },
+    {
+      "name": "Mediterranean Hummus Bowl",
+      "ingredients": ["Hummus", "Cucumber", "Tomato", "Olives", "Feta cheese", "Olive oil", "Pita bread"],
+      "recipe": "Spread hummus in a bowl. Top with diced cucumber, tomato, olives, and feta cheese. Drizzle with olive oil and serve with pita bread."
+    },
+    {
+      "name": "Classic Chicken Noodle Soup",
+      "ingredients": ["Chicken breast", "Egg noodles", "Carrots", "Celery", "Onions", "Chicken broth", "Herbs"],
+      "recipe": "Boil chicken breast in chicken broth until cooked. Remove and shred chicken. Sauté onions, carrots, and celery until soft. Add noodles and shredded chicken back to the pot. Simmer until noodles are cooked. Season with herbs and serve."
+    },
+    {
+      "name": "Vegetable Tofu Curry",
+      "ingredients": ["Tofu", "Potatoes", "Carrots", "Peas", "Onions", "Tomato", "Coconut milk", "Spices"],
+      "recipe": "Sauté onions with spices until fragrant. Add potatoes and carrots, cook until slightly tender. Add tofu, peas, tomato, and coconut milk. Simmer until vegetables are cooked through. Serve with rice or naan."
+    },
+    {
+      "name": "Nutritious Falafel Bowl",
+      "ingredients": ["Chickpeas", "Onion", "Garlic", "Parsley", "Cumin", "Coriander", "Olive oil", "Tahini", "Lettuce", "Tomato"],
+      "recipe": "Blend chickpeas with onion, garlic, parsley, cumin, and coriander. Form into balls and bake or fry until crispy. Serve over lettuce with tomato and drizzle with tahini sauce."
+    },
+    {
+      "name": "Spicy Lentil Tacos",
+      "ingredients": ["Lentils", "Taco shells", "Onion", "Tomato", "Lettuce", "Cheese", "Taco seasoning"],
+      "recipe": "Cook lentils with taco seasoning. Fill taco shells with seasoned lentils, chopped onion, tomato, lettuce, and shredded cheese. Serve immediately."
+    },
+    {
+      "name": "Creamy Mushroom Pasta",
+      "ingredients": ["Pasta", "Mushrooms", "Cream", "Garlic", "Parmesan cheese", "Parsley", "Salt", "Pepper"],
+      "recipe": "Cook pasta according to package instructions. Sauté garlic and mushrooms until tender. Add cream and simmer until slightly thickened. Mix in cooked pasta, Parmesan cheese, and parsley. Season with salt and pepper. Serve warm."
+    },
+    {
+      "name": "Honey Glazed Carrots",
+      "ingredients": ["Carrots", "Honey", "Butter", "Salt", "Pepper", "Parsley"],
+      "recipe": "Boil or steam carrots until tender. In a pan, melt butter and add honey. Toss carrots in the honey butter mixture. Season with salt and pepper. Garnish with chopped parsley and serve."
+    },
+    {
+      "name": "Chicken and Avocado Wrap",
+      "ingredients": ["Whole wheat tortillas", "Grilled chicken breast", "Avocado", "Lettuce", "Tomato", "Mayonnaise"],
+      "recipe": "Spread mayonnaise on tortillas. Layer with sliced grilled chicken, avocado, lettuce, and tomato. Roll up tightly and serve."
+    },
+    {
+      "name": "Healthy Veggie Burger",
+      "ingredients": ["Black beans", "Oats", "Onion", "Garlic", "Carrot", "Spices", "Whole wheat buns", "Lettuce", "Tomato"],
+      "recipe": "Mash black beans and mix with oats, finely chopped onion, garlic, grated carrot, and spices. Form into patties and cook on a skillet until browned on both sides. Serve on whole wheat buns with lettuce and tomato."
+    },
+    {
+      "name": "Berry Spinach Salad",
+      "ingredients": ["Spinach", "Strawberries", "Blueberries", "Almonds", "Feta cheese", "Balsamic vinaigrette"],
+      "recipe": "Combine spinach, sliced strawberries, blueberries, and almonds in a bowl. Sprinkle with feta cheese. Drizzle with balsamic vinaigrette and toss gently. Serve fresh."
+    },
+    {
+      "name": "Garlic Lemon Tilapia",
+      "ingredients": ["Tilapia fillets", "Lemon", "Garlic", "Olive oil", "Parsley", "Salt", "Pepper"],
+      "recipe": "Marinate tilapia fillets with lemon juice, minced garlic, olive oil, salt, and pepper. Bake at 180°C for 15-20 minutes or until cooked through. Garnish with chopped parsley and serve with steamed vegetables."
+    },
+    {
+      "name": "Spinach and Feta Stuffed Chicken",
+      "ingredients": ["Chicken breasts", "Spinach", "Feta cheese", "Garlic", "Olive oil", "Salt", "Pepper"],
+      "recipe": "Sauté spinach and garlic until wilted. Mix with feta cheese. Cut a pocket into each chicken breast and stuff with the spinach mixture. Secure with toothpicks. Sear in olive oil and then bake at 180°C until cooked through. Serve with a side salad."
+    },
+    {
+      "name": "Roasted Cauliflower and Chickpeas",
+      "ingredients": ["Cauliflower", "Chickpeas", "Olive oil", "Cumin", "Paprika", "Salt", "Pepper"],
+      "recipe": "Toss cauliflower florets and chickpeas with olive oil, cumin, paprika, salt, and pepper. Spread on a baking sheet and roast at 200°C until crispy and golden. Serve as a side or snack."
+    },
+    {
+      "name": "Sweet Potato and Black Bean Burrito",
+      "ingredients": ["Sweet potatoes", "Black beans", "Whole wheat tortillas", "Onion", "Garlic", "Spices", "Avocado", "Salsa"],
+      "recipe": "Roast diced sweet potatoes with spices until tender. Sauté onions and garlic, then add black beans and cooked sweet potatoes. Fill whole wheat tortillas with the mixture, add sliced avocado and salsa. Roll up and serve."
+    },
+    {
+      "name": "Greek Yogurt Chicken Salad",
+      "ingredients": ["Cooked chicken breast", "Greek yogurt", "Celery", "Grapes", "Almonds", "Salt", "Pepper"],
+      "recipe": "Mix shredded cooked chicken with Greek yogurt, chopped celery, halved grapes, and sliced almonds. Season with salt and pepper. Serve on whole grain bread or over a bed of greens."
+    },
+    {
+      "name": "Zesty Lime Grilled Vegetables",
+      "ingredients": ["Zucchini", "Bell peppers", "Red onion", "Lime", "Olive oil", "Cumin", "Salt", "Pepper"],
+      "recipe": "Slice zucchini, bell peppers, and red onion. Toss with lime juice, olive oil, cumin, salt, and pepper. Grill until tender and slightly charred. Serve as a side dish or over quinoa."
+    },
+    {
+      "name": "Avocado and Egg Breakfast Bowl",
+      "ingredients": ["Avocado", "Eggs", "Cherry tomatoes", "Spinach", "Quinoa", "Salt", "Pepper"],
+      "recipe": "Cook quinoa and place in a bowl. Top with sautéed spinach, halved cherry tomatoes, sliced avocado, and a poached or fried egg. Season with salt and pepper. Serve warm."
+    },
+    {
+      "name": "Spicy Tomato and Lentil Stew",
+      "ingredients": ["Red lentils", "Tomatoes", "Onion", "Garlic", "Ginger", "Chili flakes", "Cumin", "Coriander", "Vegetable broth"],
+      "recipe": "Sauté onions, garlic, and ginger until fragrant. Add chili flakes, cumin, and coriander. Stir in chopped tomatoes and red lentils. Add vegetable broth and simmer until lentils are tender. Serve hot with bread or rice."
+    },
+    {
+      "name": "Cottage Cheese and Fruit Bowl",
+      "ingredients": ["Cottage cheese", "Pineapple", "Strawberries", "Blueberries", "Honey"],
+      "recipe": "Combine cottage cheese with chopped pineapple, strawberries, and blueberries in a bowl. Drizzle with honey and serve chilled."
+    },
+    {
+      "name": "Turkey and Spinach Meatballs",
+      "ingredients": ["Ground turkey", "Spinach", "Breadcrumbs", "Egg", "Garlic", "Onion", "Parmesan cheese", "Salt", "Pepper"],
+      "recipe": "Mix ground turkey with chopped spinach, breadcrumbs, beaten egg, minced garlic, finely chopped onion, grated Parmesan, salt, and pepper. Form into meatballs and bake at 180°C until cooked through. Serve with marinara sauce and pasta or as a protein addition to salads."
+    },
+    {
+      "name": "Coconut and Banana Muffins",
+      "ingredients": ["Bananas", "Coconut flour", "Eggs", "Honey", "Baking soda", "Vanilla extract", "Salt"],
+      "recipe": "Mash bananas and mix with eggs, honey, and vanilla extract. Combine with coconut flour, baking soda, and salt. Pour into muffin tins and bake at 175°C until golden and a toothpick comes out clean. Let cool before serving."
+    },
+    {
+      "name": "Tomato and Basil Bruschetta",
+      "ingredients": ["Whole grain baguette", "Tomatoes", "Basil", "Garlic", "Olive oil", "Balsamic vinegar", "Salt", "Pepper"],
+      "recipe": "Toast slices of baguette. Top with a mixture of diced tomatoes, chopped basil, minced garlic, olive oil, balsamic vinegar, salt, and pepper. Serve immediately."
+    },
+    {
+      "name": "Spiced Sweet Potato Mash",
+      "ingredients": ["Sweet potatoes", "Butter", "Cinnamon", "Nutmeg", "Salt"],
+      "recipe": "Boil sweet potatoes until tender. Mash with butter, cinnamon, nutmeg, and salt until smooth. Serve as a side dish."
+    },
+    {
+      "name": "Refreshing Pineapple Mint Salad",
+      "ingredients": ["Pineapple", "Mint leaves", "Cucumber", "Lime juice", "Honey"],
+      "recipe": "Chop pineapple and cucumber into bite-sized pieces. Mix with chopped mint leaves. Drizzle with lime juice and honey. Toss gently and serve chilled."
+    },
+    {
+      "name": "Hearty Mushroom and Barley Risotto",
+      "ingredients": ["Barley", "Mushrooms", "Onion", "Garlic", "Vegetable broth", "Parmesan cheese", "Olive oil", "Salt", "Pepper"],
+      "recipe": "Sauté onions and garlic in olive oil until translucent. Add sliced mushrooms and cook until soft. Stir in barley and cook for a few minutes. Gradually add vegetable broth, stirring frequently, until barley is tender and creamy. Stir in grated Parmesan cheese, salt, and pepper. Serve hot."
+    },
+    {
+      "name": "Chickpea and Spinach Stew",
+      "ingredients": ["Chickpeas", "Spinach", "Tomatoes", "Onion", "Garlic", "Cumin", "Paprika", "Olive oil", "Salt", "Pepper"],
+      "recipe": "Sauté onions and garlic in olive oil until soft. Add cumin and paprika, cook for a minute more. Stir in chopped tomatoes and cook until they break down. Add chickpeas and simmer for 10 minutes. Add spinach and cook until wilted. Season with salt and pepper. Serve with crusty bread or rice."
+    },
+    {
+      "name": "Avocado and Black Bean Quesadilla",
+      "ingredients": ["Whole wheat tortillas", "Avocado", "Black beans", "Cheddar cheese", "Onion", "Bell pepper", "Spices"],
+      "recipe": "Mash avocado and spread on one half of a tortilla. Add black beans, sliced onions, bell peppers, and shredded cheddar cheese. Sprinkle with spices. Fold the tortilla and cook on a skillet until golden brown on both sides. Cut into wedges and serve with salsa."
+    },
+    {
+      "name": "Berry Almond Overnight Oats",
+      "ingredients": ["Rolled oats", "Almond milk", "Greek yogurt", "Mixed berries", "Almonds", "Honey", "Chia seeds"],
+      "recipe": "Combine rolled oats, almond milk, Greek yogurt, honey, and chia seeds in a jar. Stir in mixed berries. Refrigerate overnight. Top with sliced almonds before serving."
+    },
+    {
+      "name": "Roasted Red Pepper Soup",
+      "ingredients": ["Red bell peppers", "Onion", "Garlic", "Vegetable broth", "Olive oil", "Cream", "Salt", "Pepper"],
+      "recipe": "Roast red bell peppers until charred. Peel and remove seeds. Sauté onions and garlic in olive oil until soft. Add roasted peppers and vegetable broth. Simmer for 20 minutes. Blend until smooth. Stir in cream, season with salt and pepper, and heat through. Serve hot."
+    },
+    {
+      "name": "Mango and Coconut Sticky Rice",
+      "ingredients": ["Sticky rice", "Coconut milk", "Mango", "Sugar", "Salt"],
+      "recipe": "Cook sticky rice according to package instructions. In a saucepan, heat coconut milk with sugar and salt until dissolved. Pour over cooked rice and let absorb. Serve with sliced fresh mango."
+    },
+    {
+      "name": "Spicy Paneer Wrap",
+      "ingredients": ["Paneer", "Whole wheat tortillas", "Bell peppers", "Onion", "Spices", "Yogurt", "Lettuce"],
+      "recipe": "Marinate paneer cubes with spices and yogurt. Sauté with sliced bell peppers and onions until cooked. Fill whole wheat tortillas with the mixture and add lettuce. Roll up and serve."
+    },
+    {
+      "name": "Banana Oat Energy Balls",
+      "ingredients": ["Bananas", "Rolled oats", "Peanut butter", "Honey", "Chia seeds", "Dark chocolate chips"],
+      "recipe": "Mash bananas and mix with rolled oats, peanut butter, honey, and chia seeds. Stir in dark chocolate chips. Form into small balls and refrigerate until firm. Serve as a healthy snack."
+    },
+    {
+      "name": "Crispy Baked Fish Fingers",
+      "ingredients": ["White fish fillets", "Breadcrumbs", "Parmesan cheese", "Eggs", "Flour", "Spices", "Salt", "Pepper"],
+      "recipe": "Cut fish fillets into finger-sized pieces. Dredge in flour, dip in beaten eggs, and coat with a mixture of breadcrumbs, grated Parmesan, spices, salt, and pepper. Place on a baking sheet and bake at 200°C until golden and crispy. Serve with tartar sauce or ketchup."
+    },
+    {
+      "name": "Sweet and Sour Tofu",
+      "ingredients": ["Tofu", "Bell peppers", "Pineapple", "Onion", "Garlic", "Soy sauce", "Vinegar", "Honey", "Cornstarch", "Oil"],
+      "recipe": "Press and cube tofu. Coat with cornstarch and fry until crispy. Sauté onions, garlic, and bell peppers. Add pineapple chunks and a sauce made from soy sauce, vinegar, and honey. Stir in fried tofu and cook until sauce thickens. Serve with rice."
+    },
+    {
+      "name": "Vegetarian Stuffed Bell Peppers",
+      "ingredients": ["Bell peppers", "Quinoa", "Black beans", "Corn", "Tomatoes", "Onion", "Spices", "Cheddar cheese"],
+      "recipe": "Cook quinoa and mix with black beans, corn, diced tomatoes, sautéed onions, and spices. Stuff the mixture into halved bell peppers. Top with shredded cheddar cheese and bake at 180°C until peppers are tender and cheese is melted. Serve hot."
+    },
+    {
+      "name": "Lemon Garlic Shrimp",
+      "ingredients": ["Shrimp", "Lemon", "Garlic", "Butter", "Parsley", "Salt", "Pepper"],
+      "recipe": "Melt butter in a skillet, add minced garlic and sauté until fragrant. Add shrimp, lemon juice, salt, and pepper. Cook until shrimp are pink and opaque. Garnish with chopped parsley and serve with pasta or rice."
+    },
+    {
+      "name": "Berry Spinach Quinoa Salad",
+      "ingredients": ["Quinoa", "Spinach", "Mixed berries", "Almonds", "Feta cheese", "Lemon vinaigrette"],
+      "recipe": "Cook quinoa and let it cool. In a large bowl, combine spinach, mixed berries, and almonds. Add quinoa and crumbled feta cheese. Drizzle with lemon vinaigrette and toss gently. Serve chilled."
+    },
+    {
+      "name": "Eggplant and Chickpea Stew",
+      "ingredients": ["Eggplant", "Chickpeas", "Tomatoes", "Onion", "Garlic", "Cumin", "Paprika", "Olive oil", "Salt", "Pepper"],
+      "recipe": "Sauté onions and garlic in olive oil until soft. Add chopped eggplant and cook until it starts to soften. Stir in tomatoes, chickpeas, cumin, and paprika. Simmer until eggplant is tender. Season with salt and pepper. Serve with couscous or bread."
+    },
+    {
+      "name": "Greek Stuffed Zucchini",
+      "ingredients": ["Zucchini", "Ground beef or turkey", "Onion", "Tomatoes", "Feta cheese", "Olives", "Herbs", "Spices"],
+      "recipe": "Halve zucchinis and scoop out the centers. Sauté ground beef or turkey with onions, chopped tomatoes, olives, herbs, and spices. Stuff the mixture into zucchini halves. Top with crumbled feta cheese and bake at 180°C until zucchinis are tender. Serve hot."
+    },
+    {
+      "name": "Pumpkin and Lentil Dal",
+      "ingredients": ["Pumpkin", "Red lentils", "Onion", "Garlic", "Ginger", "Spices", "Tomato", "Cilantro"],
+      "recipe": "Sauté onions, garlic, and ginger with spices until fragrant. Add chopped pumpkin, red lentils, and diced tomatoes. Cook with water until lentils and pumpkin are tender. Garnish with chopped cilantro and serve with rice or naan."
+    },
+    {
+      "name": "Cabbage and Carrot Slaw",
+      "ingredients": ["Cabbage", "Carrots", "Apple cider vinegar", "Honey", "Olive oil", "Salt", "Pepper"],
+      "recipe": "Shred cabbage and carrots. In a bowl, mix apple cider vinegar, honey, olive oil, salt, and pepper to make the dressing. Toss the shredded vegetables with the dressing. Let it sit for at least 30 minutes before serving."
+    },
+    {
+      "name": "Tofu and Vegetable Skewers",
+      "ingredients": ["Tofu", "Bell peppers", "Zucchini", "Cherry tomatoes", "Onion", "Olive oil", "Soy sauce", "Spices"],
+      "recipe": "Press and cube tofu. Marinate tofu and vegetables in olive oil, soy sauce, and spices. Thread onto skewers and grill until vegetables are tender and tofu is golden. Serve with a side of rice or salad."
+    },
+    {
+      "name": "Healthy Apple Muffins",
+      "ingredients": ["Apples", "Whole wheat flour", "Eggs", "Honey", "Baking powder", "Cinnamon", "Salt", "Oil"],
+      "recipe": "Mix whole wheat flour, baking powder, cinnamon, and salt in a bowl. In another bowl, beat eggs with honey and oil. Combine wet and dry ingredients. Fold in chopped apples. Pour into muffin tins and bake at 180°C until golden and a toothpick comes out clean. Let cool before serving."
+    },
+    {
+      "name": "Creamy Avocado Pasta",
+      "ingredients": ["Whole wheat pasta", "Avocado", "Garlic", "Lemon juice", "Olive oil", "Parmesan cheese", "Salt", "Pepper"],
+      "recipe": "Cook whole wheat pasta according to package instructions. In a blender, combine avocado, garlic, lemon juice, olive oil, Parmesan cheese, salt, and pepper until smooth. Toss the sauce with the cooked pasta. Serve immediately."
+    },
+    {
+      "name": "Roasted Brussels Sprouts with Honey",
+      "ingredients": ["Brussels sprouts", "Honey", "Olive oil", "Salt", "Pepper"],
+      "recipe": "Halve Brussels sprouts and toss with olive oil, honey, salt, and pepper. Spread on a baking sheet and roast at 200°C until crispy and caramelized. Serve as a side dish."
+    },
+    {
+      "name": "Quinoa and Black Bean Stuffed Sweet Potatoes",
+      "ingredients": ["Sweet potatoes", "Quinoa", "Black beans", "Corn", "Tomato", "Avocado", "Cilantro", "Lime juice"],
+      "recipe": "Bake sweet potatoes until tender. Cook quinoa and mix with black beans, corn, diced tomatoes, and chopped cilantro. Fill baked sweet potatoes with the quinoa mixture. Top with sliced avocado and a squeeze of lime juice. Serve warm."
+    },
+    {
+      "name": "Spinach and Ricotta Stuffed Shells",
+      "ingredients": ["Jumbo pasta shells", "Spinach", "Ricotta cheese", "Mozzarella cheese", "Parmesan cheese", "Tomato sauce", "Garlic", "Onion", "Salt", "Pepper"],
+      "recipe": "Cook jumbo pasta shells according to package instructions. Sauté garlic and onion, add spinach and cook until wilted. Mix with ricotta cheese, salt, and pepper. Stuff the mixture into cooked shells. Place in a baking dish with tomato sauce and top with shredded mozzarella and Parmesan cheese. Bake at 180°C until bubbly and golden."
+    },
+    {
+      "name": "Turmeric Ginger Tea",
+      "ingredients": ["Fresh turmeric", "Fresh ginger", "Lemon", "Honey", "Water"],
+      "recipe": "Boil water with sliced turmeric and ginger for 10 minutes. Strain into a cup, add lemon juice and honey to taste. Serve warm."
+    },
+    {
+      "name": "Kale and Quinoa Salad",
+      "ingredients": ["Kale", "Quinoa", "Cherry tomatoes", "Cucumbers", "Feta cheese", "Olive oil", "Lemon juice", "Salt", "Pepper"],
+      "recipe": "Cook quinoa and let it cool. Massage chopped kale with olive oil and lemon juice until tender. In a large bowl, combine kale, quinoa, halved cherry tomatoes, diced cucumbers, and crumbled feta cheese. Season with salt and pepper. Toss and serve."
+    }
+  ]
+}
