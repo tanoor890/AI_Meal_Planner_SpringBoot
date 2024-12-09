@@ -241,7 +241,7 @@ public class MealPlannerController {
         String prompt = promptBuilder.toString();
 
         // Call OpenAI API
-        String apiKey = System.getenv("OPENAI_API_KEY"); // Use environment variable
+        String apiKey = "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"; // Use environment variable
         String response = callOpenAIAPI(prompt, apiKey);
 
         return response;
