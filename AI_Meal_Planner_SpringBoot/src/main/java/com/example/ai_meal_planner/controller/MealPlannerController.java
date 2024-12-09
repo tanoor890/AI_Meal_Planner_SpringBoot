@@ -140,7 +140,7 @@ private void initializeMeals() {
                 mealPlan.add(meal);
             }
         }
-Collections.shuffle(mealPlan);
+          Collections.shuffle(mealPlan);
         return mealPlan.subList(0, Math.min(3, mealPlan.size()));
     }
 
@@ -156,3 +156,56 @@ Collections.shuffle(mealPlan);
             return true;
     }
 }
+    
+
+
+    private boolean containsRestrictions(Meal meal, List<String> restrictions) {
+        for (String restriction : restrictions) {
+            if (!restriction.trim().isEmpty() && meal.matchesRestriction(restriction.trim())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private boolean containsAllergens(Meal meal, List<String> allergies) {
+        for (String allergy : allergies) {
+            if (!allergy.trim().isEmpty() && meal.containsIngredient(allergy.trim())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private List<String> generateGroceryList(List<Meal> mealPlan) {
+        Set<String> grocerySet = new HashSet<>();
+        for (Meal meal : mealPlan) {
+            grocerySet.addAll(meal.getIngredients());
+        }
+        return new ArrayList<>(grocerySet);
+    }
+
+    private String getMealPlanDescription(List<Meal> mealPlan, String gender, double weight, double height, double age, String activity, String goal) {
+        StringBuilder promptBuilder = new StringBuilder();
+        promptBuilder.append("Generate a detailed meal plan for a user with the following attributes:\n");
+        promptBuilder.append("Gender: ").append(gender).append("\n");
+        promptBuilder.append("Age: ").append(age).append("\n");
+        promptBuilder.append("Weight: ").append(weight).append(" kg\n");
+        promptBuilder.append("Height: ").append(height).append(" cm\n");
+        promptBuilder.append("Activity Level: ").append(activity.replace("_", " ")).append("\n");
+        promptBuilder.append("Goal: ").append(goal).append("\n");
+        promptBuilder.append("Meal Plan:\n");
+
+        for (Meal meal : mealPlan) {
+            promptBuilder.append("- ").append(meal.getName()).append("\n");
+        }
+
+        promptBuilder.append("Provide detailed nutritional information and explain why these meals are suitable for the user's goal.");
+
+        String prompt = promptBuilder.toString();
+
+        String apiKey = System.getenv("OPENAI_API_KEY"); 
+        String response = callOpenAIAPI(prompt, apiKey);
+
+        return response;
+    }
