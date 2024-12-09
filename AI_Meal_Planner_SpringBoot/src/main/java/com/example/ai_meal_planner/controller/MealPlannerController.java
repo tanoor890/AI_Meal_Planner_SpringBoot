@@ -1,4 +1,5 @@
 package com.example.ai_meal_planner.controller;
+
 import java.nio.charset.StandardCharsets;
 import com.example.ai_meal_planner.model.Meal;
 import org.springframework.stereotype.Controller;
@@ -15,10 +16,12 @@ import java.util.*;
 @Controller
 public class MealPlannerController {
 
+    // Data structures for meal planning
     private Map<String, Meal> meals = new HashMap<>();
 
     @PostConstruct
     public void init() {
+        // Initialize meal data with recipes and ingredients
         initializeMeals();
     }
 
@@ -29,6 +32,7 @@ public class MealPlannerController {
 
     @PostMapping("/calculate")
     public String handleCalculation(@RequestParam Map<String, String> params, Model model) {
+        // Retrieve parameters
         String goal = params.get("goal");
         String ageStr = params.get("age");
         String weightStr = params.get("weight");
@@ -42,15 +46,20 @@ public class MealPlannerController {
         double weight = Double.parseDouble(weightStr);
         double height = Double.parseDouble(heightStr);
 
+        // Calculate BMR and TDEE
         double bmr = calculateBMR(gender, weight, height, age);
         double tdee = calculateTDEE(bmr, activity);
 
+        // Generate meal plan
         List<Meal> mealPlan = generateMealPlan(goal, restrictions, allergies);
 
+        // Generate grocery list
         List<String> groceryList = generateGroceryList(mealPlan);
 
+        // Generate meal plan description using OpenAI API
         String mealPlanDescription = getMealPlanDescription(mealPlan, gender, weight, height, age, activity, goal);
 
+        // Set attributes for the Thymeleaf template
         model.addAttribute("bmr", bmr);
         model.addAttribute("tdee", tdee);
         model.addAttribute("mealPlan", mealPlan);
@@ -63,38 +72,38 @@ public class MealPlannerController {
     @PostMapping("/feedback")
     public String handleFeedback(@RequestParam Map<String, String> params, Model model) {
         String feedback = params.get("feedback");
+        // Process feedback as needed (e.g., save to database or send an email)
         model.addAttribute("message", "Thank you for your feedback!");
         return "index";
     }
 
+    private void initializeMeals() {
+        // Read meals from JSON file
+        try (InputStream inputStream = getClass().getClassLoader().getResourceAsStream("meals.json")) {
+            if (inputStream != null) {
+                String json = new String(inputStream.readAllBytes(), StandardCharsets.UTF_8);
+                JSONObject jsonObject = new JSONObject(json);
+                JSONArray mealArray = jsonObject.getJSONArray("meals");
 
-private void initializeMeals() {
-    try (InputStream inputStream = getClass().getClassLoader().getResourceAsStream("meals.json")) {
-        if (inputStream != null) {
-            String json = new String(inputStream.readAllBytes(), StandardCharsets.UTF_8);
-            JSONObject jsonObject = new JSONObject(json);
-            JSONArray mealArray = jsonObject.getJSONArray("meals");
+                for (int i = 0; i < mealArray.length(); i++) {
+                    JSONObject mealJson = mealArray.getJSONObject(i);
+                    String name = mealJson.getString("name");
+                    JSONArray ingredientsJson = mealJson.getJSONArray("ingredients");
+                    List<String> ingredients = new ArrayList<>();
+                    for (int j = 0; j < ingredientsJson.length(); j++) {
+                        ingredients.add(ingredientsJson.getString(j));
+                    }
+                    String recipe = mealJson.getString("recipe");
 
-            for (int i = 0; i < mealArray.length(); i++) {
-                JSONObject mealJson = mealArray.getJSONObject(i);
-                String name = mealJson.getString("name");
-                JSONArray ingredientsJson = mealJson.getJSONArray("ingredients");
-                List<String> ingredients = new ArrayList<>();
-                for (int j = 0; j < ingredientsJson.length(); j++) {
-                    ingredients.add(ingredientsJson.getString(j));
+                    meals.put(name, new Meal(name, ingredients, recipe));
                 }
-                String recipe = mealJson.getString("recipe");
-
-                meals.put(name, new Meal(name, ingredients, recipe));
             }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-    } catch (IOException e) {
-        e.printStackTrace();
     }
-}
 
-
- private double calculateBMR(String gender, double weight, double height, double age) {
+    private double calculateBMR(String gender, double weight, double height, double age) {
         if ("male".equalsIgnoreCase(gender)) {
             return (10 * weight) + (6.25 * height) - (5 * age) + 5;
         } else {
@@ -103,8 +112,7 @@ private void initializeMeals() {
     }
 
     private double calculateTDEE(double bmr, String activity) {
-        double activityFactor = 1.2; 
-        
+        double activityFactor = 1.2; // Default sedentary
         switch (activity) {
             case "sedentary":
                 activityFactor = 1.2;
@@ -131,33 +139,38 @@ private void initializeMeals() {
     private List<Meal> generateMealPlan(String goal, String restrictions, String allergies) {
         List<Meal> mealPlan = new ArrayList<>();
 
-        
+        // Convert restrictions and allergies to lists
         List<String> restrictionList = Arrays.asList(restrictions.toLowerCase().split(","));
         List<String> allergyList = Arrays.asList(allergies.toLowerCase().split(","));
 
+        // Filter meals based on restrictions and allergies
         for (Meal meal : meals.values()) {
-            if (matchesGoal(meal, goal) && !containsRestrictions(meal, restrictionList) && !containsAllergens(meal, allergyList)) {
+            if (matchesGoal(meal, goal) && !containsRestrictions(meal, restrictionList)
+                    && !containsAllergens(meal, allergyList)) {
                 mealPlan.add(meal);
             }
         }
-          Collections.shuffle(mealPlan);
+        Collections.shuffle(mealPlan);
+        // Limit the meal plan to 3 meals for the day
         return mealPlan.subList(0, Math.min(3, mealPlan.size()));
     }
 
     private boolean matchesGoal(Meal meal, String goal) {
-    switch (goal.toLowerCase()) {
-        case "Weight Gain":
-            return meal.getIngredients().contains("chicken") || meal.getIngredients().contains("fish") || meal.getIngredients().contains("tofu");
-        case "Weight Loss":
-            return !meal.getIngredients().contains("butter") && !meal.getIngredients().contains("cream");
-        case "Maintenance":
-            return true;
-        default:
-            return true;
+        switch (goal.toLowerCase()) {
+            case "Weight Gain":
+                // Ensure the meal is high in protein
+                return meal.getIngredients().contains("chicken") || meal.getIngredients().contains("fish")
+                        || meal.getIngredients().contains("tofu");
+            case "Weight Loss":
+                // Low-calorie or balanced meals
+                return !meal.getIngredients().contains("butter") && !meal.getIngredients().contains("cream");
+            case "Maintenance":
+                // Regular meals with balanced macros
+                return true;
+            default:
+                return true;
+        }
     }
-}
-    
-
 
     private boolean containsRestrictions(Meal meal, List<String> restrictions) {
         for (String restriction : restrictions) {
@@ -185,38 +198,62 @@ private void initializeMeals() {
         return new ArrayList<>(grocerySet);
     }
 
-    private String getMealPlanDescription(List<Meal> mealPlan, String gender, double weight, double height, double age, String activity, String goal) {
+    private String getMealPlanDescription(List<Meal> mealPlan, String gender, double weight, double height, double age,
+            String activity, String goal) {
+        // Construct the prompt for OpenAI API
         StringBuilder promptBuilder = new StringBuilder();
-        promptBuilder.append("Generate a detailed meal plan for a user with the following attributes:\n");
+        promptBuilder.append(
+                "Generate a detailed meal plan in HTML format that seamlessly integrates with the existing 'AI Meal Planner' website. The design and styles should match the base style provided, utilizing the same CSS classes and adhering to the established color scheme and typography. The meal plan should include sections like Breakfast, Lunch, Dinner, and Snacks, each with icons, calorie counts, and nutritional values. Additionally, provide a summary of total calories, protein, and other key nutrients to ensure daily requirements are met. The output should adhere to the following specifications:\n"
+                        + "- **Design and Styling:**\n"
+                        + "  - Use the existing CSS classes such as `.results`, `.meal-plans`, `.meal-item`, and others to ensure consistent styling.\n"
+                        + "  - Apply the 'Poppins' font family as used in the base stylesheet.\n"
+                        + "  - Utilize the color variables like `--primary-color`, `--secondary-color`, and `--accent-color` for text and background elements.\n"
+                        + "  - Maintain the same padding, margins, border-radius, and box-shadow settings for elements to preserve layout consistency.\n"
+                        + "- **Layout and Structure:**\n"
+                        + "  - 4 Clear Section: Breakfast, Lunch, Dinner, Snacks Each meal section (Breakfast, Lunch, Dinner, Snacks) should be encapsulated within a `.meal-item` div.\n"
+                        + "  - Include icons relevant to each meal using appropriate emoji or emojies libraries.\n"
+                        + "  - Display calorie and nutritional information clearly within each meal section and say why it is good for them.\n"
+                        + "  - At the end of the meal plan, include a summary section within the `.results` div that outlines total calories, protein, and other nutrients.\n"
+                        + "- **Additional Sections:**\n"
+                        + "  - **Motivational Tip:** Add a motivational health tip at the bottom, styled consistently with other text elements.\n"
+                        + "- **Responsiveness:** Ensure that the generated HTML is responsive, maintaining usability and aesthetics on both desktop and mobile devices.\n"
+                        + "- **Example Integration:** The generated HTML should fit within the `<div class=\"results\">` section of the existing page, leveraging Thymeleaf attributes where necessary.\n"
+                        + "- **No Inline Styles:** Avoid using inline CSS; rely solely on the existing stylesheet for all styling needs.\n"
+                        + "- **Emojis and Icons:** Use emojis for visual appeal without compromising the design's professionalism.\n"
+                        + "- **Semantic HTML:** Structure the HTML semantically for better accessibility and SEO.\n"
+                        + "- **Final Output:** ONLY return the HTML code snippet that can be directly embedded into the existing page without additional explanations or text.");
+
         promptBuilder.append("Gender: ").append(gender).append("\n");
         promptBuilder.append("Age: ").append(age).append("\n");
         promptBuilder.append("Weight: ").append(weight).append(" kg\n");
         promptBuilder.append("Height: ").append(height).append(" cm\n");
         promptBuilder.append("Activity Level: ").append(activity.replace("_", " ")).append("\n");
         promptBuilder.append("Goal: ").append(goal).append("\n");
-        promptBuilder.append("Meal Plan:\n");
+        promptBuilder.append("<strong>Meal Plan:</strong><br>");
 
         for (Meal meal : mealPlan) {
             promptBuilder.append("- ").append(meal.getName()).append("\n");
         }
 
-        promptBuilder.append("Provide detailed nutritional information and explain why these meals are suitable for the user's goal.");
+        promptBuilder.append(
+                "Keep the line break and spacing correctly and Add Emoji. Provide detailed nutritional information and explain why these meals are suitable for the user's goal with calorie, protein, and carbohydrate intake. add reasoning for each meal. \n");
 
         String prompt = promptBuilder.toString();
 
-        String apiKey = System.getenv("OPENAI_API_KEY"); 
+        // Call OpenAI API
+        String apiKey = System.getenv("OPENAI_API_KEY"); // Use environment variable
         String response = callOpenAIAPI(prompt, apiKey);
 
         return response;
     }
-    
+
     private String callOpenAIAPI(String prompt, String apiKey) {
         try {
             String apiUrl = "https://api.openai.com/v1/chat/completions";
 
             URL url = new URL(apiUrl);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-            connection.setDoOutput(true); 
+            connection.setDoOutput(true); // For POST
             connection.setRequestMethod("POST");
             connection.setRequestProperty("Content-Type", "application/json");
             connection.setRequestProperty("Authorization", "Bearer " + apiKey);
@@ -236,6 +273,7 @@ private void initializeMeals() {
             byte[] input = jsonInput.toString().getBytes("utf-8");
             os.write(input, 0, input.length);
 
+            // Read response
             BufferedReader br = new BufferedReader(new InputStreamReader(connection.getInputStream(), "utf-8"));
             StringBuilder responseSB = new StringBuilder();
             String responseLine;
@@ -244,6 +282,7 @@ private void initializeMeals() {
                 responseSB.append(responseLine.trim());
             }
 
+            // Parse JSON response
             String responseText = responseSB.toString();
             JSONObject jsonResponse = new JSONObject(responseText);
             JSONArray choices = jsonResponse.getJSONArray("choices");
