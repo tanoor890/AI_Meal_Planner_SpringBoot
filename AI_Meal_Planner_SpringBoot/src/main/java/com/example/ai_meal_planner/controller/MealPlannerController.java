@@ -92,3 +92,67 @@ private void initializeMeals() {
         e.printStackTrace();
     }
 }
+
+
+ private double calculateBMR(String gender, double weight, double height, double age) {
+        if ("male".equalsIgnoreCase(gender)) {
+            return (10 * weight) + (6.25 * height) - (5 * age) + 5;
+        } else {
+            return (10 * weight) + (6.25 * height) - (5 * age) - 161;
+        }
+    }
+
+    private double calculateTDEE(double bmr, String activity) {
+        double activityFactor = 1.2; 
+        
+        switch (activity) {
+            case "sedentary":
+                activityFactor = 1.2;
+                break;
+            case "lightly_active":
+                activityFactor = 1.375;
+                break;
+            case "moderately_active":
+                activityFactor = 1.55;
+                break;
+            case "very_active":
+                activityFactor = 1.725;
+                break;
+            case "super_active":
+                activityFactor = 1.9;
+                break;
+            default:
+                activityFactor = 1.2;
+                break;
+        }
+        return bmr * activityFactor;
+    }
+
+    private List<Meal> generateMealPlan(String goal, String restrictions, String allergies) {
+        List<Meal> mealPlan = new ArrayList<>();
+
+        
+        List<String> restrictionList = Arrays.asList(restrictions.toLowerCase().split(","));
+        List<String> allergyList = Arrays.asList(allergies.toLowerCase().split(","));
+
+        for (Meal meal : meals.values()) {
+            if (matchesGoal(meal, goal) && !containsRestrictions(meal, restrictionList) && !containsAllergens(meal, allergyList)) {
+                mealPlan.add(meal);
+            }
+        }
+Collections.shuffle(mealPlan);
+        return mealPlan.subList(0, Math.min(3, mealPlan.size()));
+    }
+
+    private boolean matchesGoal(Meal meal, String goal) {
+    switch (goal.toLowerCase()) {
+        case "Weight Gain":
+            return meal.getIngredients().contains("chicken") || meal.getIngredients().contains("fish") || meal.getIngredients().contains("tofu");
+        case "Weight Loss":
+            return !meal.getIngredients().contains("butter") && !meal.getIngredients().contains("cream");
+        case "Maintenance":
+            return true;
+        default:
+            return true;
+    }
+}
