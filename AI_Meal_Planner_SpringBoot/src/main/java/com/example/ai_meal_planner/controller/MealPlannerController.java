@@ -209,3 +209,53 @@ private void initializeMeals() {
 
         return response;
     }
+    
+    private String callOpenAIAPI(String prompt, String apiKey) {
+        try {
+            String apiUrl = "https://api.openai.com/v1/chat/completions";
+
+            URL url = new URL(apiUrl);
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            connection.setDoOutput(true); 
+            connection.setRequestMethod("POST");
+            connection.setRequestProperty("Content-Type", "application/json");
+            connection.setRequestProperty("Authorization", "Bearer " + apiKey);
+
+            JSONObject jsonInput = new JSONObject();
+            jsonInput.put("model", "gpt-3.5-turbo");
+
+            JSONArray messages = new JSONArray();
+            JSONObject messageContent = new JSONObject();
+            messageContent.put("role", "user");
+            messageContent.put("content", prompt);
+            messages.put(messageContent);
+
+            jsonInput.put("messages", messages);
+
+            OutputStream os = connection.getOutputStream();
+            byte[] input = jsonInput.toString().getBytes("utf-8");
+            os.write(input, 0, input.length);
+
+            BufferedReader br = new BufferedReader(new InputStreamReader(connection.getInputStream(), "utf-8"));
+            StringBuilder responseSB = new StringBuilder();
+            String responseLine;
+
+            while ((responseLine = br.readLine()) != null) {
+                responseSB.append(responseLine.trim());
+            }
+
+            String responseText = responseSB.toString();
+            JSONObject jsonResponse = new JSONObject(responseText);
+            JSONArray choices = jsonResponse.getJSONArray("choices");
+            JSONObject firstChoice = choices.getJSONObject(0);
+            JSONObject message = firstChoice.getJSONObject("message");
+            String content = message.getString("content");
+
+            return content;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "Error generating meal plan description.";
+        }
+    }
+}
