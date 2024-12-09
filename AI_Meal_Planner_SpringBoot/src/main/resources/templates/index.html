@@ -1,64 +1,80 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
-        <title>AI Meal Planner</title>
+        <div class="logo-container">
+            <img th:src="@{/images/logo.png}" alt="AI Meal Planner Logo" class="logo" style="width: 290px; height: auto;">
+        </div>
         <style>
+            @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
             body {
+                background-color: #462009;
                 background-image: url("https://images.unsplash.com/photo-1517245386807-9b4d0d6f9d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80");
                 background-repeat: no-repeat;
                 background-size: cover;
-                font-family: Arial, sans-serif;
+                background-blend-mode: overlay;
+                font-family: 'Poppins', sans-serif;
                 margin: 0;
                 padding: 0;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+                justify-content: center;
                 min-height: 100vh;
-                background-color: rgba(230, 231, 251, 0.5);
-            }
-            
-            ul {
-                list-style-type: none;
-                padding: 0;
             }
             
             h1, h2 {
-                color: #090707;
-                font-family: sans-serif;
+                color: #ffffff;
                 text-align: center;
+                text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
             }
             
             h1 {
                 font-size: 36px;
-                font-weight: 600;
+                font-weight: 700;
                 margin-top: 30px;
             }
             
             h2 {
-                font-size: 24px;
+                font-size: 28px;
                 font-weight: 600;
                 margin-top: 30px;
             }
             
             .form-container {
-                background-color: rgba(255, 255, 255, 0.9);
+                background: rgba(255, 255, 255, 0.1);
                 padding: 30px;
-                border-radius: 10px;
-                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+                border-radius: 15px;
+                box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3), 0px 0px 15px rgba(255, 255, 255, 0.2);
                 max-width: 600px;
                 width: 90%;
                 margin: 20px auto;
+                backdrop-filter: blur(10px);
+                animation: slideIn 1s ease-in-out;
+                color: #ffffff;
+            }
+
+            @keyframes slideIn {
+                from {
+                    transform: translateY(50px);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
             }
             
             .form-group {
-                margin-bottom: 15px;
+                margin-bottom: 20px;
             }
             
             label {
                 display: block;
-                margin-bottom: 5px;
-                font-weight: bold;
-                color: #333;
+                margin-bottom: 8px;
+                font-weight: 500;
+                font-size: 16px;
+                color: #ffffff;
             }
             
             input[type="number"],
@@ -66,57 +82,91 @@
             select,
             textarea {
                 width: 100%;
-                padding: 10px;
+                padding: 12px 15px;
                 box-sizing: border-box;
-                border: 1px solid #ccc;
-                border-radius: 4px;
+                border: none;
+                border-radius: 8px;
                 font-size: 16px;
+                background: rgba(255, 255, 255, 0.2);
+                color: #ffffff;
+                outline: none;
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+                transition: all 0.3s ease;
+            }
+            
+            input[type="number"]:focus,
+            input[type="text"]:focus,
+            select:focus,
+            textarea:focus {
+                background: rgba(255, 255, 255, 0.3);
+                box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.5);
             }
             
             textarea {
                 resize: vertical;
+                min-height: 100px;
             }
             
             .submit-btn {
-                background-color: #28a745;
+                background: linear-gradient(90deg, #ff7f50, #ff4500);
                 color: white;
-                padding: 10px 20px;
+                padding: 12px 20px;
                 border: none;
-                border-radius: 5px;
+                border-radius: 8px;
                 cursor: pointer;
-                font-size: 16px;
+                font-size: 18px;
+                font-weight: 600;
                 width: 100%;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2), 0px 0px 10px rgba(255, 69, 0, 0.5);
+                transition: all 0.3s ease;
             }
             
             .submit-btn:hover {
-                background-color: #218838;
+                background: linear-gradient(90deg, #ff4500, #ff7f50);
+                box-shadow: 0px 6px 15px rgba(255, 69, 0, 0.8), 0px 0px 15px rgba(255, 69, 0, 0.8);
+                transform: translateY(-2px);
             }
             
             .message {
-                background-color: #f8d7da;
-                color: #721c24;
-                border: 1px solid #f5c6cb;
-                padding: 10px;
-                border-radius: 5px;
+                background-color: rgba(255, 255, 255, 0.2);
+                color: #ffffff;
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                padding: 15px;
+                border-radius: 10px;
                 margin: 20px auto;
                 width: 90%;
                 text-align: center;
                 max-width: 600px;
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
             }
             
             .results {
-                background-color: rgba(255, 255, 255, 0.95);
+                background-color: rgba(255, 255, 255, 0.1);
                 padding: 20px;
-                border-radius: 10px;
+                border-radius: 15px;
                 margin: 20px auto;
                 max-width: 800px;
                 width: 90%;
-                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+                box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3), 0px 0px 15px rgba(255, 255, 255, 0.2);
+                backdrop-filter: blur(10px);
+                color: #ffffff;
+                animation: fadeIn 1s ease-in-out;
+            }
+
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                }
+                to {
+                    opacity: 1;
+                }
             }
             
             .results p {
                 font-size: 18px;
-                color: #333;
+                color: #ffffff;
             }
             
             .meal-plans {
@@ -124,22 +174,23 @@
             }
             
             .meal-item {
-                background-color: #fff;
+                background-color: rgba(255, 255, 255, 0.2);
                 padding: 15px;
-                border-radius: 5px;
+                border-radius: 10px;
                 margin-bottom: 15px;
-                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
             }
             
             .meal-item h3 {
                 margin-top: 0;
-                color: #007bff;
+                color: #ff7f50;
             }
             
             .grocery-list ul {
                 text-align: left;
                 display: inline-block;
                 padding-left: 20px;
+                color: #ffffff;
             }
             
             .feedback-section {
@@ -157,7 +208,7 @@
                 
                 .submit-btn {
                     font-size: 14px;
-                    padding: 8px 16px;
+                    padding: 10px 16px;
                 }
             }
         </style>
@@ -165,7 +216,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <h1>AI Meal Planner</h1>
 
         <div th:if="${message}" class="message">
             <p th:text="${message}"></p>
@@ -238,12 +288,11 @@
             <h2>Your Results</h2>
             <p><strong>BMR:</strong> <span th:text="${#numbers.formatDecimal(bmr, 0, 0)}"></span> calories/day</p>
             <p><strong>TDEE:</strong> <span th:text="${#numbers.formatDecimal(tdee, 0, 0)}"></span> calories/day</p>
-
+        
             <h2>Your Meal Plan</h2>
-            <div th:if="${mealPlanDescription}" 
-            th:text="${#strings.replace(mealPlanDescription, '\n', '<br/>')}">
+            <div th:if="${mealPlanDescription}" th:utext="${mealPlanDescription}">
             </div>
-
+        
             <div th:if="${mealPlan}" class="meal-plans">
                 <h2>Recipes</h2>
                 <div th:each="meal : ${mealPlan}" class="meal-item">
@@ -258,14 +307,14 @@
                     </div>
                 </div>
             </div>
-
+        
             <div th:if="${groceryList}" class="grocery-list">
                 <h2>Your Grocery List</h2>
                 <ul>
                     <li th:each="item : ${groceryList}" th:text="${item}"></li>
                 </ul>
             </div>
-
+        
             <div class="feedback-section">
                 <h2>Provide Feedback on Your Meal Plan</h2>
                 <form th:action="@{/feedback}" method="post">
