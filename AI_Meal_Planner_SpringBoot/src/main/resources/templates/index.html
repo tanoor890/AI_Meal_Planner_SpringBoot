@@ -10,24 +10,21 @@
 
     <!-- Embedded CSS -->
     <style>
-        /* CSS Variables */
         :root {
             --primary-color: #462009;
             --secondary-color: #ffffff;
-            --accent-color: #ff7f50; /* Coral */
+            --accent-color: #ff7f50;
             --background-blend: rgba(70, 32, 9, 0.7);
             --button-gradient: linear-gradient(90deg, #ff7f50, #ff4500);
             --button-hover-gradient: linear-gradient(90deg, #ff4500, #ff7f50);
         }
 
-        /* Reset Margins and Padding */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* Body Styling */
         body {
             font-family: 'Poppins', sans-serif;
             background-color: var(--primary-color);
@@ -43,10 +40,9 @@
             min-height: 100vh;
             position: relative;
             color: var(--secondary-color);
-            scroll-behavior: smooth; /* Enable smooth scrolling */
+            scroll-behavior: smooth;
         }
 
-        /* Overlay to Darken Background for Readability */
         body::before {
             content: "";
             position: absolute;
@@ -58,7 +54,6 @@
             z-index: -1;
         }
 
-        /* Logo Styling */
         .logo-container {
             text-align: center;
             margin: 30px 0 20px 0;
@@ -72,7 +67,6 @@
             box-shadow: none;
         }
 
-        /* Headings with Neon Effect */
         h1, h2 {
             text-align: center;
             text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
@@ -98,7 +92,6 @@
             color: var(--secondary-color);
         }
 
-        /* Form Container Styling */
         .form-container {
             background: rgba(255, 255, 255, 0.1);
             padding: 30px;
@@ -112,7 +105,6 @@
             color: var(--secondary-color);
         }
 
-        /* Form Group Styling */
         .form-group {
             margin-bottom: 20px;
         }
@@ -142,8 +134,8 @@
             transition: all 0.3s ease;
         }
         select option {
-            background-color: rgba(0, 0, 0, 0.8); /* Black background for options */
-            color: var(--secondary-color); /* White text for options */
+            background-color: rgba(0, 0, 0, 0.8);
+            color: var(--secondary-color);
         }
         input[type="number"]:focus,
         input[type="text"]:focus,
@@ -158,7 +150,6 @@
             min-height: 100px;
         }
 
-        /* Submit Button with Neon Effect */
         .submit-btn {
             background: var(--button-gradient);
             color: var(--primary-color);
@@ -181,7 +172,6 @@
             transform: translateY(-2px);
         }
 
-        /* Message Styling */
         .message {
             background-color: rgba(255, 255, 255, 0.2);
             color: var(--secondary-color);
@@ -196,7 +186,6 @@
             animation: fadeIn 1s ease-in-out;
         }
 
-        /* Results Section Styling */
         .results {
             background-color: rgba(255, 255, 255, 0.1);
             padding: 20px;
@@ -215,7 +204,6 @@
             color: var(--secondary-color);
         }
 
-        /* Meal Plans Styling */
         .meal-plans {
             margin-top: 20px;
         }
@@ -245,12 +233,10 @@
             color: var(--secondary-color);
         }
 
-        /* Feedback Section Styling */
         .feedback-section {
             margin-top: 30px;
         }
 
-        /* Animations */
         @keyframes slideIn {
             from {
                 transform: translateY(50px);
@@ -299,7 +285,6 @@
             }
         }
 
-        /* Responsive Design */
         @media (max-width: 600px) {
             h1 {
                 font-size: 28px;
@@ -319,7 +304,6 @@
             }
         }
 
-        /* Navigation Button Styling */
         .nav-button {
             background: var(--button-gradient);
             color: var(--primary-color);
@@ -346,74 +330,157 @@
         }
 
         .nav-button-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
 
         #home {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Full viewport height */
-    width: 100%; /* Full width */
-    background-color: var(--primary-color); /* Background color */
-    background-image: url("https://images.unsplash.com/photo-1517245386807-9b4d0d6f9d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"); /* Background image */
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-blend-mode: overlay;
-    position: relative;
-    overflow: hidden; /* Hide anything outside this section */
-}
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100%;
+            background-color: var(--primary-color);
+            background-image: url("https://images.unsplash.com/photo-1517245386807-9b4d0d6f9d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-blend-mode: overlay;
+            position: relative;
+            overflow: hidden;
+        }
 
-#home::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--background-blend); /* Overlay color for readability */
-    z-index: -1;
-}
+        #home::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--background-blend);
+            z-index: -1;
+        }
 
-#home h1 {
-    margin-bottom: 20px;
-    text-align: center;
-}
+        #home h1 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
 
-#home .logo-container {
-    margin-bottom: 20px;
-}
+        #home .logo-container {
+            margin-bottom: 20px;
+        }
 
-#home .nav-button {
-    margin-top: 20px;
-}
+        #home .nav-button {
+            margin-top: 20px;
+        }
 
+        .goal-options {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .goal-options input[type="radio"] {
+            display: none;
+        }
+
+        .goal-card {
+            flex: 1 1 30%;
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid transparent;
+            border-radius: 15px;
+            padding: 20px;
+            cursor: pointer;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            display: flex;
+            align-items: center;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .goal-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+        }
+
+        .goal-options input[type="radio"]:checked + .goal-card {
+            border-color: var(--accent-color);
+            background: rgba(255, 127, 80, 0.3);
+        }
+
+        .goal-card .icon {
+            font-size: 40px;
+            margin-right: 15px;
+        }
+
+        .goal-card .goal-text h3 {
+            margin-bottom: 5px;
+            font-size: 20px;
+            color: var(--secondary-color);
+        }
+
+        .goal-card .goal-text p {
+            font-size: 14px;
+            color: var(--secondary-color);
+        }
+
+        @media (max-width: 600px) {
+            .goal-card {
+                flex: 1 1 100%;
+            }
+        }
     </style>
 </head>
 <body>
-    <!-- Home Section -->
     <section id="home">
         <h1>Make a Wish, Let AI Plan the Dish</h1>
-        <!-- Logo Section -->
         <div class="logo-container">
             <img th:src="@{/images/logo.png}" alt="AI Meal Planner Logo" class="logo">
         </div>
-        <!-- Button to Navigate to Form Section -->
         <a href="#form-section" class="nav-button">Get Started</a>
     </section>
 
-    <!-- Message Section -->
     <div th:if="${message}" class="message">
         <p th:text="${message}"></p>
     </div>
 
-    <!-- Form Section -->
     <section id="form-section">
         <form th:action="@{/calculate}" method="post" class="form-container">
+            <h2>What is your Goal</h2>
+            <div class="form-group">
+                <label>Select Your Goal:</label>
+                <div class="goal-options">
+                    <input type="radio" id="goal-loss" name="goal" value="Loss" required>
+                    <label for="goal-loss" class="goal-card">
+                        <div class="icon">🤸‍♀️</div>
+                        <div class="goal-text">
+                            <h3>Weight Loss</h3>
+                            <p>Reduce your calorie intake to shed pounds.</p>
+                        </div>
+                    </label>
+
+                    <input type="radio" id="goal-gain" name="goal" value="Gain">
+                    <label for="goal-gain" class="goal-card">
+                        <div class="icon">💪</div>
+                        <div class="goal-text">
+                            <h3>Weight Gain</h3>
+                            <p>Increase your calorie intake to build muscle.</p>
+                        </div>
+                    </label>
+
+                    <input type="radio" id="goal-maintain" name="goal" value="Maintain">
+                    <label for="goal-maintain" class="goal-card">
+                        <div class="icon">🏋️</div>
+                        <div class="goal-text">
+                            <h3>Maintenance</h3>
+                            <p>Maintain your current weight with a balanced diet.</p>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
             <h2>Personal Information</h2>
             <div class="form-group">
                 <label for="age">Age (years):</label>
@@ -436,7 +503,6 @@
                     <option value="">Select gender</option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
-                    <!-- You can add more options if needed -->
                 </select>
             </div>
 
@@ -452,17 +518,6 @@
                 </select>
             </div>
 
-            <h2>Goal</h2>
-            <div class="form-group">
-                <label for="goal">Select Your Goal:</label>
-                <select id="goal" name="goal" required>
-                    <option value="">Select goal</option>
-                    <option value="Loss">Weight Loss</option>
-                    <option value="Gain">Weight Gain</option>
-                    <option value="Maintain">Maintenance</option>
-                </select>
-            </div>
-
             <h2>Dietary Preferences</h2>
             <div class="form-group">
                 <label for="restrictions">Dietary Restrictions:</label>
@@ -470,7 +525,7 @@
             </div>
 
             <div class="form-group">
-                <label for="allergies">Allergies:</label>
+                <label for="allergies">Additional Information:</label>
                 <input type="text" id="allergies" name="allergies" placeholder="e.g., peanuts, dairy">
             </div>
 
@@ -478,7 +533,6 @@
         </form>
     </section>
 
-    <!-- Results Section -->
     <section id="results-section">
         <div th:if="${bmr != null}" class="results">
             <h2>Your Results</h2>
@@ -486,11 +540,9 @@
             <p><strong>TDEE:</strong> <span th:text="${#numbers.formatDecimal(tdee, 0, 0)}"></span> calories/day</p>
         
             <h2>Your Meal Plan</h2>
-            <!-- Meal Plan Description -->
             <div th:if="${mealPlanDescription}" th:utext="${mealPlanDescription}">
             </div>
         
-            <!-- Recipes Section -->
             <div th:if="${mealPlan}" class="meal-plans">
                 <h2>Recipes</h2>
                 <div th:each="meal : ${mealPlan}" class="meal-item">
@@ -506,7 +558,6 @@
                 </div>
             </div>
         
-            <!-- Grocery List Section -->
             <div th:if="${groceryList}" class="grocery-list">
                 <h2>Your Grocery List</h2>
                 <ul>
@@ -514,7 +565,6 @@
                 </ul>
             </div>
         
-            <!-- Feedback Section -->
             <div class="feedback-section">
                 <h2>Provide Feedback on Your Meal Plan</h2>
                 <form th:action="@{/feedback}" method="post">
@@ -526,17 +576,14 @@
                     <button type="submit" class="submit-btn">Submit Feedback</button>
                 </form>
             </div>
-
         </div>
     </section>
 
-    <!-- Embedded JavaScript -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const form = document.querySelector('.form-container');
     
             form.addEventListener('submit', (e) => {
-                // Example: Validate dietary restrictions and allergies
                 const restrictions = document.getElementById('restrictions').value;
                 const allergies = document.getElementById('allergies').value;
     
@@ -549,13 +596,10 @@
                 }
             });
     
-            // Automatically scroll to the results section when results are generated
             const resultsSection = document.getElementById('results-section');
     
-            // Check if results are present (you can adjust this condition based on your server-side logic)
-            const bmrElement = document.querySelector('[th\\:if="${bmr != null}"]'); // Ensure this matches your actual condition
+            const bmrElement = document.querySelector('[th\\:if="${bmr != null}"]');
             if (bmrElement) {
-                // Scroll to the results section
                 resultsSection.scrollIntoView({ behavior: 'smooth' });
             }
         });
