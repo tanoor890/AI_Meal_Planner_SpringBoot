@@ -1,226 +1,418 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <div class="logo-container">
-            <img th:src="@{/images/logo.png}" alt="AI Meal Planner Logo" class="logo" style="width: 290px; height: auto;">
-        </div>
-        <style>
-            @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Meal Planner</title>
 
-            body {
-                background-color: #462009;
-                background-image: url("https://images.unsplash.com/photo-1517245386807-9b4d0d6f9d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80");
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-blend-mode: overlay;
-                font-family: 'Poppins', sans-serif;
-                margin: 0;
-                padding: 0;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                min-height: 100vh;
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Embedded CSS -->
+    <style>
+        /* CSS Variables */
+        :root {
+            --primary-color: #462009;
+            --secondary-color: #ffffff;
+            --accent-color: #ff7f50; /* Coral */
+            --background-blend: rgba(70, 32, 9, 0.7);
+            --button-gradient: linear-gradient(90deg, #ff7f50, #ff4500);
+            --button-hover-gradient: linear-gradient(90deg, #ff4500, #ff7f50);
+        }
+
+        /* Reset Margins and Padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--primary-color);
+            background-image: url("https://images.unsplash.com/photo-1517245386807-9b4d0d6f9d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-blend-mode: overlay;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            position: relative;
+            color: var(--secondary-color);
+            scroll-behavior: smooth; /* Enable smooth scrolling */
+        }
+
+        /* Overlay to Darken Background for Readability */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--background-blend);
+            z-index: -1;
+        }
+
+        /* Logo Styling */
+        .logo-container {
+            text-align: center;
+            margin: 30px 0 20px 0;
+            animation: fadeInDown 1s ease-in-out;
+        }
+
+        .logo {
+            width: 350px;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: none;
+        }
+
+        /* Headings with Neon Effect */
+        h1, h2 {
+            text-align: center;
+            text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 700;
+            margin: 30px 0;
+            color: var(--secondary-color);
+            text-shadow:
+                0 0 5px var(--secondary-color),
+                0 0 10px var(--accent-color),
+                0 0 20px var(--accent-color),
+                0 0 40px var(--accent-color);
+            animation: neonPulse 1.5s infinite;
+        }
+
+        h2 {
+            font-size: 28px;
+            font-weight: 600;
+            margin: 30px 0;
+            color: var(--secondary-color);
+        }
+
+        /* Form Container Styling */
+        .form-container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3), 0px 0px 15px rgba(255, 255, 255, 0.2);
+            max-width: 600px;
+            width: 90%;
+            margin: 20px auto;
+            backdrop-filter: blur(10px);
+            animation: slideIn 1s ease-in-out;
+            color: var(--secondary-color);
+        }
+
+        /* Form Group Styling */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            font-size: 16px;
+            color: var(--secondary-color);
+        }
+
+        input[type="number"],
+        input[type="text"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px 15px;
+            box-sizing: border-box;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            background: rgba(255, 255, 255, 0.2);
+            color: var(--secondary-color);
+            outline: none;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        select option {
+            background-color: rgba(0, 0, 0, 0.8); /* Black background for options */
+            color: var(--secondary-color); /* White text for options */
+        }
+        input[type="number"]:focus,
+        input[type="text"]:focus,
+        select:focus,
+        textarea:focus {
+            background: rgba(255, 255, 255, 0.3);
+            box-shadow: 0px 4px 15px rgba(255, 69, 0, 0.5);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        /* Submit Button with Neon Effect */
+        .submit-btn {
+            background: var(--button-gradient);
+            color: var(--primary-color);
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: 600;
+            width: 100%;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2), 0px 0px 10px rgba(255, 69, 0, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background: var(--button-hover-gradient);
+            box-shadow: 0px 6px 15px rgba(255, 69, 0, 0.8), 0px 0px 15px rgba(255, 69, 0, 0.8);
+            transform: translateY(-2px);
+        }
+
+        /* Message Styling */
+        .message {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: var(--secondary-color);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px auto;
+            width: 90%;
+            text-align: center;
+            max-width: 600px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        /* Results Section Styling */
+        .results {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px auto;
+            max-width: 800px;
+            width: 90%;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3), 0px 0px 15px rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            color: var(--secondary-color);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .results p {
+            font-size: 18px;
+            color: var(--secondary-color);
+        }
+
+        /* Meal Plans Styling */
+        .meal-plans {
+            margin-top: 20px;
+        }
+
+        .meal-item {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .meal-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .meal-item h3 {
+            margin-top: 0;
+            color: var(--accent-color);
+        }
+
+        .grocery-list ul {
+            text-align: left;
+            display: inline-block;
+            padding-left: 20px;
+            color: var(--secondary-color);
+        }
+
+        /* Feedback Section Styling */
+        .feedback-section {
+            margin-top: 30px;
+        }
+
+        /* Animations */
+        @keyframes slideIn {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
             }
-            
-            h1, h2 {
-                color: #ffffff;
-                text-align: center;
-                text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+            to {
+                transform: translateY(0);
+                opacity: 1;
             }
-            
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes neonPulse {
+            0%, 100% {
+                text-shadow:
+                    0 0 5px var(--secondary-color),
+                    0 0 10px var(--accent-color),
+                    0 0 20px var(--accent-color),
+                    0 0 40px var(--accent-color);
+            }
+            50% {
+                text-shadow:
+                    0 0 10px var(--secondary-color),
+                    0 0 20px var(--accent-color),
+                    0 0 30px var(--accent-color),
+                    0 0 50px var(--accent-color);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
             h1 {
-                font-size: 36px;
-                font-weight: 700;
-                margin-top: 30px;
+                font-size: 28px;
             }
             
             h2 {
-                font-size: 28px;
-                font-weight: 600;
-                margin-top: 30px;
-            }
-            
-            .form-container {
-                background: rgba(255, 255, 255, 0.1);
-                padding: 30px;
-                border-radius: 15px;
-                box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3), 0px 0px 15px rgba(255, 255, 255, 0.2);
-                max-width: 600px;
-                width: 90%;
-                margin: 20px auto;
-                backdrop-filter: blur(10px);
-                animation: slideIn 1s ease-in-out;
-                color: #ffffff;
-            }
-
-            @keyframes slideIn {
-                from {
-                    transform: translateY(50px);
-                    opacity: 0;
-                }
-                to {
-                    transform: translateY(0);
-                    opacity: 1;
-                }
-            }
-            
-            .form-group {
-                margin-bottom: 20px;
-            }
-            
-            label {
-                display: block;
-                margin-bottom: 8px;
-                font-weight: 500;
-                font-size: 16px;
-                color: #ffffff;
-            }
-            
-            input[type="number"],
-            input[type="text"],
-            select,
-            textarea {
-                width: 100%;
-                padding: 12px 15px;
-                box-sizing: border-box;
-                border: none;
-                border-radius: 8px;
-                font-size: 16px;
-                background: rgba(255, 255, 255, 0.2);
-                color: #ffffff;
-                outline: none;
-                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-                transition: all 0.3s ease;
-            }
-            
-            input[type="number"]:focus,
-            input[type="text"]:focus,
-            select:focus,
-            textarea:focus {
-                background: rgba(255, 255, 255, 0.3);
-                box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.5);
-            }
-            
-            textarea {
-                resize: vertical;
-                min-height: 100px;
+                font-size: 20px;
             }
             
             .submit-btn {
-                background: linear-gradient(90deg, #ff7f50, #ff4500);
-                color: white;
-                padding: 12px 20px;
-                border: none;
-                border-radius: 8px;
-                cursor: pointer;
-                font-size: 18px;
-                font-weight: 600;
-                width: 100%;
-                text-transform: uppercase;
-                letter-spacing: 1px;
-                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2), 0px 0px 10px rgba(255, 69, 0, 0.5);
-                transition: all 0.3s ease;
-            }
-            
-            .submit-btn:hover {
-                background: linear-gradient(90deg, #ff4500, #ff7f50);
-                box-shadow: 0px 6px 15px rgba(255, 69, 0, 0.8), 0px 0px 15px rgba(255, 69, 0, 0.8);
-                transform: translateY(-2px);
-            }
-            
-            .message {
-                background-color: rgba(255, 255, 255, 0.2);
-                color: #ffffff;
-                border: 1px solid rgba(255, 255, 255, 0.3);
-                padding: 15px;
-                border-radius: 10px;
-                margin: 20px auto;
-                width: 90%;
-                text-align: center;
-                max-width: 600px;
-                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-            }
-            
-            .results {
-                background-color: rgba(255, 255, 255, 0.1);
-                padding: 20px;
-                border-radius: 15px;
-                margin: 20px auto;
-                max-width: 800px;
-                width: 90%;
-                box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3), 0px 0px 15px rgba(255, 255, 255, 0.2);
-                backdrop-filter: blur(10px);
-                color: #ffffff;
-                animation: fadeIn 1s ease-in-out;
+                font-size: 14px;
+                padding: 10px 16px;
             }
 
-            @keyframes fadeIn {
-                from {
-                    opacity: 0;
-                }
-                to {
-                    opacity: 1;
-                }
+            .logo {
+                width: 250px;
             }
-            
-            .results p {
-                font-size: 18px;
-                color: #ffffff;
-            }
-            
-            .meal-plans {
-                margin-top: 20px;
-            }
-            
-            .meal-item {
-                background-color: rgba(255, 255, 255, 0.2);
-                padding: 15px;
-                border-radius: 10px;
-                margin-bottom: 15px;
-                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-            }
-            
-            .meal-item h3 {
-                margin-top: 0;
-                color: #ff7f50;
-            }
-            
-            .grocery-list ul {
-                text-align: left;
-                display: inline-block;
-                padding-left: 20px;
-                color: #ffffff;
-            }
-            
-            .feedback-section {
-                margin-top: 30px;
-            }
-            
-            @media (max-width: 600px) {
-                h1 {
-                    font-size: 28px;
-                }
-                
-                h2 {
-                    font-size: 20px;
-                }
-                
-                .submit-btn {
-                    font-size: 14px;
-                    padding: 10px 16px;
-                }
-            }
-        </style>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
+        }
 
-        <div th:if="${message}" class="message">
-            <p th:text="${message}"></p>
+        /* Navigation Button Styling */
+        .nav-button {
+            background: var(--button-gradient);
+            color: var(--primary-color);
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2), 0px 0px 10px rgba(255, 69, 0, 0.5);
+            transition: all 0.3s ease;
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .nav-button:hover {
+            background: var(--button-hover-gradient);
+            box-shadow: 0px 6px 15px rgba(255, 69, 0, 0.8), 0px 0px 15px rgba(255, 69, 0, 0.8);
+            transform: translateY(-2px);
+        }
+
+        .nav-button-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        }
+
+        #home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    width: 100%; /* Full width */
+    background-color: var(--primary-color); /* Background color */
+    background-image: url("https://images.unsplash.com/photo-1517245386807-9b4d0d6f9d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"); /* Background image */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: overlay;
+    position: relative;
+    overflow: hidden; /* Hide anything outside this section */
+}
+
+#home::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-blend); /* Overlay color for readability */
+    z-index: -1;
+}
+
+#home h1 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#home .logo-container {
+    margin-bottom: 20px;
+}
+
+#home .nav-button {
+    margin-top: 20px;
+}
+
+    </style>
+</head>
+<body>
+    <!-- Home Section -->
+    <section id="home">
+        <h1>Make a Wish, Let AI Plan the Dish</h1>
+        <!-- Logo Section -->
+        <div class="logo-container">
+            <img th:src="@{/images/logo.png}" alt="AI Meal Planner Logo" class="logo">
         </div>
+        <!-- Button to Navigate to Form Section -->
+        <a href="#form-section" class="nav-button">Get Started</a>
+    </section>
 
+    <!-- Message Section -->
+    <div th:if="${message}" class="message">
+        <p th:text="${message}"></p>
+    </div>
+
+    <!-- Form Section -->
+    <section id="form-section">
         <form th:action="@{/calculate}" method="post" class="form-container">
             <h2>Personal Information</h2>
             <div class="form-group">
@@ -244,6 +436,7 @@
                     <option value="">Select gender</option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
+                    <!-- You can add more options if needed -->
                 </select>
             </div>
 
@@ -283,16 +476,21 @@
 
             <button type="submit" class="submit-btn">Generate Meal Plan</button>
         </form>
+    </section>
 
+    <!-- Results Section -->
+    <section id="results-section">
         <div th:if="${bmr != null}" class="results">
             <h2>Your Results</h2>
             <p><strong>BMR:</strong> <span th:text="${#numbers.formatDecimal(bmr, 0, 0)}"></span> calories/day</p>
             <p><strong>TDEE:</strong> <span th:text="${#numbers.formatDecimal(tdee, 0, 0)}"></span> calories/day</p>
         
             <h2>Your Meal Plan</h2>
+            <!-- Meal Plan Description -->
             <div th:if="${mealPlanDescription}" th:utext="${mealPlanDescription}">
             </div>
         
+            <!-- Recipes Section -->
             <div th:if="${mealPlan}" class="meal-plans">
                 <h2>Recipes</h2>
                 <div th:each="meal : ${mealPlan}" class="meal-item">
@@ -308,6 +506,7 @@
                 </div>
             </div>
         
+            <!-- Grocery List Section -->
             <div th:if="${groceryList}" class="grocery-list">
                 <h2>Your Grocery List</h2>
                 <ul>
@@ -315,6 +514,7 @@
                 </ul>
             </div>
         
+            <!-- Feedback Section -->
             <div class="feedback-section">
                 <h2>Provide Feedback on Your Meal Plan</h2>
                 <form th:action="@{/feedback}" method="post">
@@ -326,6 +526,40 @@
                     <button type="submit" class="submit-btn">Submit Feedback</button>
                 </form>
             </div>
+
         </div>
-    </body>
+    </section>
+
+    <!-- Embedded JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.querySelector('.form-container');
+    
+            form.addEventListener('submit', (e) => {
+                // Example: Validate dietary restrictions and allergies
+                const restrictions = document.getElementById('restrictions').value;
+                const allergies = document.getElementById('allergies').value;
+    
+                const invalidPattern = /[^a-zA-Z,\s]/;
+    
+                if (invalidPattern.test(restrictions) || invalidPattern.test(allergies)) {
+                    e.preventDefault();
+                    alert('Please enter only letters, commas, and spaces in dietary restrictions and allergies.');
+                    return;
+                }
+            });
+    
+            // Automatically scroll to the results section when results are generated
+            const resultsSection = document.getElementById('results-section');
+    
+            // Check if results are present (you can adjust this condition based on your server-side logic)
+            const bmrElement = document.querySelector('[th\\:if="${bmr != null}"]'); // Ensure this matches your actual condition
+            if (bmrElement) {
+                // Scroll to the results section
+                resultsSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    </script>
+    
+</body>
 </html>
